@@ -62,12 +62,12 @@ INCHAN NULL
 83:DEFAULT=0 Legato Glide
 15:47 VCO1 Level
 16:48 VCO2 Level
-27:59:DEFAULT=64 External In Level
+27:59:DEFAULT=64 Ext In Level
 19:51 Filter Cutoff
 21:52 Filter Resonance
 22:50 Filter EG Amount
 20:54 Filter KB Track
-89:DEFAULT=64 Filter Vel Sens.
+89:DEFAULT=64 Filter Vel Sens
 23:55 VCF Attack
 24:56 VCF DecayRelease
 25:57 VCF Sustain
@@ -77,7 +77,7 @@ INCHAN NULL
 72 Release Switch
 73:DEFAULT=0 Trigger Mode
 7:39 VCA Output Level
-90:DEFAULT=64 Volume Vel. Sens.
+90:DEFAULT=64 Volume Vel Sens
 91:DEFAULT=127 Key Priority
 1:33 Mod Wheel
 107:DEFAULT=32 Bend Up Amount
