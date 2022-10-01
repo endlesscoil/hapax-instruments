@@ -1,0 +1,262 @@
+VERSION 1 # Currently, this should only be 1.
+
+# Supports all alphanumeric ASCII, and ' ', '_', '-', '+' - can also be NULL
+TRACKNAME GR-1
+
+# Can be POLY, DRUM, MPE, or NULL
+TYPE NULL
+
+# Can be A, B, C, D, USBD, USBH, CVGx (x between 1&4), CVx, Gx, or NULL
+OUTPORT NULL
+
+# Can be x (between 1-16), or NULL -- this is ignored if output port is not MIDI
+OUTCHAN NULL
+
+# Can be NONE, ALLACTIVE, A, B, USBH, USBD, CVG, or NULL
+INPORT NULL
+
+# Can be x (between 1-16), ALL, or NULL. This definition will be ignored if INPORT is NONE, ALLACTIVE or CVG
+INCHAN NULL
+
+# DRUMLANES
+# Syntax: ROW:TRIG:CHAN:NOTENUMBER NAME
+# ROW must be between 1 and 8
+# TRIG can be between 0 and 127, or NULL
+# CHAN can be a number between 1 and 16, Gx, CVx, CVGx (x between 1 and 4), or NULL
+# NOTENUMBER can be between 0 and 127, or NULL
+# NAME supports all alphanumeric ASCII, and ' ', '_', '-', '+' - can also be NULL
+# Please note this section will be discarded for tracks which are not DRUM tracks
+[DRUMLANES]
+[/DRUMLANES]
+
+
+# PC
+# Syntax: NUMBER NAME
+# number must be either:
+#   - A number (for simple PC)
+#   - Three numbers, delimited by ':', which represent PC:MSB:LSB. You can put 'NULL' to not set the MSB/LSB.
+# PC must be between 1...128
+# MSB/LSB must be between 0...127
+[PC]
+[/PC]
+
+
+# CC
+# Syntax: CC_NUMBER NAME or CC_NUMBER:DEFAULT=xx NAME
+# DEFAULT_VALUE must be a valid number between 0 and 127
+[CC]
+120 All Sound Off
+123 All Notes Off
+124 OMNI Off
+125 OMNI On
+126 Stop All Voices
+[/CC]
+
+
+# NRPN
+# Syntax: "MSB:LSB:DEPTH NAME" or "MSB:LSB:DEPTH:DEFAULT=xx NAME"
+# Lsb & msb should be between 0 and 127
+# DEPTH can be 7 or 14
+# For NRPN: DEFAULT_VALUE must be a valid number, either between 0 and 127 (for 7 bit NRPNs) or between 0 and 16383 (for 14bit NRPNs)
+[NRPN]
+0:1:14 Mod Wheel
+0:2:14 Position
+0:3:14 Density
+0:4:14 Grain Size
+0:5:14 Spray
+0:7:14 GM Volume
+0:8:14 Cutoff
+0:9:14 Resonance
+0:10:14 Pan Spray
+0:11:14 Scan
+0:12:14 Window Sides
+0:13:14 Window Tilt
+0:14:14 Window Curve
+0:15:7 LFO1 Waveform
+16:7 LFO2 Waveform
+0:17:14 LFO1 Freq
+0:18:14 LOF1 Amount
+0:19:14 LFO2 Freq
+0:20:14 LFO2 Amount
+0:21:14 CV1 Amount
+0:22:14 CV2 Amount
+0:23:14 Attack Time
+0:24:14 Decay Time
+0:25:14 Sustain Amplitude
+0:26:14 Release Time
+0:27:7 LFO1 Dest
+0:28:7 LFO2 Dest
+0:29:7 CV1 Dest
+0:30:7 CV2 Dest
+0:31:7 LFO1 Key Sync
+0:32:7 LFO2 Key Sync
+0:34:7 LFO1 Clock Sync
+0:35:7 LFO2 Clock Sync
+0:36:14 CV2 Emulation
+0:37:14 Grain Dir Bias
+0:39:14 Master Volume
+0:40:14 Mod LFO1 Tune
+0:41:14 Mod LFO1 Pos
+0:42:14 Mod LFO1 Spray
+0:43:14 Mod LFO1 Size
+0:44:14 Mod LFO1 Dens
+0:45:14 Mod LFO1 Cutoff
+0:46:14 Mod LFO2 Tune
+0:47:14 Mod LFO2 Pos
+0:48:14 Mod LFO2 Spray
+0:49:14 Mod LFO2 Size
+0:51:14 Mod LFO2 Dens
+0:52:14 Mod LFO2 Cutoff
+0:53:14 Mod CV1 Tune
+0:54:14 Mod CV1 Pos
+0:55:14 Mod CV1 Spray
+0:56:14 Mod CV1 Size
+0:57:14 Mod CV1 Dens
+0:58:14 Mod CV1 Cutoff
+0:59:14 Mod CV2 Tune
+0:60:14 Pitchbend Range
+0:61:14 Mod CV2 Pos
+0:62:14 Mod CV2 Spray
+0:63:14 Mod CV2 Size
+0:64:14 Sustain Pedal
+0:65:14 Mod CV2 Cutoff
+0:66:7 Scan Key Sync
+0:67:14 Tune
+0:68:14 Mod CV2 Dens
+0:69:7 Record Sample
+0:72:14 Mod LFO1 Sides
+0:73:14 Mod LFO1 Tilt
+0:75:14 Mod LFO1 Curve
+0:76:14 Mod LFO2 Sides
+0:77:14 Mod LFO2 Tilt
+0:78:14 Mod LFO2 Curve
+0:79:14 Mod CV1 Sides
+0:80:14 Mod CV1 Tilt
+0:81:14 Mod CV1 Curve
+0:82:14 Mod CV2 Sides
+0:83:14 Mod CV2 Tilt
+0:84:14 Mod CV2 Curve
+0:85:14 Mod Timbre Dens
+0:86:14 Mod Timbre Cutoff
+0:87:14 Mod Timbre Tune
+0:88:14 Mod Timbre Pos
+0:89:14 Mod Timbre Spray
+0:90:14 Mod Timbre Size
+0:91:14 Mod Timbre Sides
+0:92:14 Mob Timbre Tilt
+0:93:14 Mod Timbre Curve
+0:94:14 Mod Vel Dens
+0:95:14 Mod Vel Cutoff
+0:96:14 Mod Vel Tune
+0:97:14 Mod Vel Pos
+0:103:14 Mod Vel Spray
+0:104:14 Mod Vel Size
+0:105:14 Mod Vel Sides
+0:107:14 Mod Vel Tilt
+0:108:14 Mod Vel Curve
+0:109:14 Mod AftTch Dens
+0:110:14 Mod AftTch Cutoff
+0:111:14 Mod AftTch Tune
+0:112:14 Mod AftTch Pos
+0:113:14 Mod AftTch Spray
+0:114:14 Mod AftTch Size
+0:115:14 Mod AftTch Sides
+0:116:14 Mod AftTch Tilt
+0:117:14 Mod AftTch Curve
+1:0:14 Mod Lift Dens
+1:1:14 Mod Lift Cutoff
+1:2:14 Mod Lift Tune
+1:3:14 Mod Lift Pos
+1:4:14 Mod Lift Spray
+1:5:14 Mod Lift Size
+1:6:14 Mod Lift Sides
+1:7:14 Mod Lift Tilt
+1:8:14 Mod Lift Curve
+1:9:7 Enable Part
+1:10:7 Focus Part
+1:11:14 Scan Part 1
+1:12:14 Scan Part 2
+1:13:14 Scan Part 3
+1:14:14 Scan Part 4
+1:38:7 Map Chan Part 1
+1:39:7 Map Chan Part 2
+1:40:7 Map Chan Part 3
+1:41:7 Map Chan Part 4
+1:46:7 Disable Part
+1:47:7 Map Preset Part 1
+1:48:7 Map Preset Part 2
+1:49:7 Map Preset Part 3
+1:50:7 Map Preset Part 4
+1:55:14 Mod Pitch Dens
+1:56:14 Mod Pitch Cutoff
+1:57:14 Mod Pitch Tune
+1:58:14 Mod Pitch Pos
+1:59:14 Mod Pitch Spray
+1:60:14 Mod Pitch Size
+1:61:14 Mod Pitch Sides
+1:62:14 Mod Pitch Tilt
+1:63:14 Mod Pitch Curve
+1:64:14 Mod Pitch Amp
+1:65:14 Mod Pitch Pan Spray
+1:66:14 Mod LFO1 Amp
+1:67:14 Mod LFO1 Pan Spray
+1:68:14 Mod LFO2 Amp
+1:69:14 Mod LFO2 Pan Spray
+1:70:14 Mod CV1 Amp
+1:71:14 Mod CV1 Pan Spray
+1:72:14 Mod CV2 Amp
+1:73:14 Mod CV2 Pan Spray
+1:74:14 Mod Timbre Amp
+1:75:14 Mod Timbre Pan Spray
+1:76:14 Mod AftTch Amp
+1:77:14 Mod AftTch Pan Spray
+1:78:14 Mod Lift Amp
+1:79:14 Mod Lift Pan Spray
+1:80:14 Mod Vel Amp
+1:81:14 Mod Vel Pan Spray
+1:82:7 Resample AntiAlias OnOff
+1:83:14 Tapeslew
+1:84:7 LFO1 Mult
+1:85:7 LFO1 Div
+1:86:7 LFO2 Mult
+1:87:7 LFO2 Div
+1:88:14 Pan
+[/NRPN]
+
+
+# ASSIGN
+# Syntax: POT_NUMBER TYPE:VALUE or POT_NUMBER TYPE:VALUE DEFAULT=DEFAULT_VALUE
+# POT_NUMBER must be between 1 and 8
+# TYPE can be "CC", "PB" (pitchbend), "AT" (aftertouch), "CV", "NRPN", or "NULL" (this won't assign the pot).
+# Non explicitly-defined pots will be considered "NULL"
+# VALUE VALIDATION
+#### For CC: Value must be a valid number between 0 and 119
+#### For PB and AT, any text after the TYPE will be ignored
+#### For CV, value must be between 1 and 4
+#### For NRPN, value must be MSB:LSB:DEPTH, with both lsb & msb bebtween 0 and 127, and DEPTH being either 7 or 14
+# DEFAULT VALUE
+#### For CC: DEFAULT_VALUE must be a valid number between 0 and 127
+#### For PB: DEFAULT_VALUE must be a valid number between 0 and 16383
+#### For NRPN: DEFAULT_VALUE must be a valid number, either between 0 and 127 (for 7 bit NRPNs) or between 0 and 16383 (for 14bit NRPNs)
+#### For CV: DEFAULT_VALUE must be either a valid number between 0 and 65535, or a voltage between -5V and 5V, e.g. "-4.25V" or "1.7V"
+#### Please note default value will be ignored for PB and AT messages.
+[ASSIGN]
+[/ASSIGN]
+
+
+# AUTOMATION
+# Syntax: TYPE:VALUE
+# TYPE can be "CC", "PB" (pitchbend), "AT" (aftertouch), "CV", or "NRPN"
+# VALUE VALIDATION
+#### For CC: Value must be a valid number between 0 and 119
+#### For PB and AT, any text after the TYPE will be ignored
+#### For CV, value must be between 1 and 4
+#### For NRPN, value must be MSB:LSB:DEPTH, with both lsb & msb bebtween 0 and 127, and DEPTH being either 7 or 14
+[AUTOMATION]
+[/AUTOMATION]
+
+
+# This section will be readable from Hapax.
+[COMMENT]
+Tasty Chips GR-1
+[/COMMENT]
