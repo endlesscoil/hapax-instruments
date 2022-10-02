@@ -73,7 +73,7 @@ INCHAN NULL
 0:13:14 Window Tilt
 0:14:14 Window Curve
 0:15:7 LFO1 Waveform
-16:7 LFO2 Waveform
+0:16:7 LFO2 Waveform
 0:17:14 LFO1 Freq
 0:18:14 LOF1 Amount
 0:19:14 LFO2 Freq
