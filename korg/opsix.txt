@@ -7,16 +7,16 @@ TRACKNAME Opsix
 TYPE POLY
 
 # Can be A, B, C, D, USBD, USBH, CVGx (x between 1&4), CVx, Gx, or NULL
-OUTPORT NULL
+OUTPORT A
 
 # Can be x (between 1-16), or NULL -- this is ignored if output port is not MIDI
-OUTCHAN NULL
+OUTCHAN 6
 
 # Can be NONE, ALLACTIVE, A, B, USBH, USBD, CVG, or NULL
-INPORT NULL
+INPORT ALLACTIVE
 
 # Can be x (between 1-16), ALL, or NULL. This definition will be ignored if INPORT is NONE, ALLACTIVE or CVG
-INCHAN NULL
+INCHAN 6
 
 # DRUMLANES
 # Syntax: ROW:TRIG:CHAN:NOTENUMBER NAME
