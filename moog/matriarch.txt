@@ -65,7 +65,7 @@ INCHAN 3
 90 Square LFO Polarity
 91 ARP Mode
 92 ARP Pattern
-93 ARP Range/Bank
+93 ARP RangeBank
 94 Paraphony Voice Mode
 95 Multi Trig
 105 Keyboard Octave

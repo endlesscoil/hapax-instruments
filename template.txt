@@ -1,10 +1,10 @@
 VERSION 1 # Currently, this should only be 1.
 
 # Supports all alphanumeric ASCII, and ' ', '_', '-', '+' - can also be NULL
-TRACKNAME Lemondrop
+TRACKNAME NULL
 
 # Can be POLY, DRUM, MPE, or NULL
-TYPE POLY
+TYPE NULL
 
 # Can be A, B, C, D, USBD, USBH, CVGx (x between 1&4), CVx, Gx, or NULL
 OUTPORT A
@@ -91,5 +91,4 @@ INCHAN NULL
 
 # This section will be readable from Hapax.
 [COMMENT]
-1010 Music Nanobox Lemondrop - No CC exposed.  Any CC can be mapped to any function inside lemondrop.
 [/COMMENT]
