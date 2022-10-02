@@ -54,7 +54,7 @@ INCHAN NULL
 70 VCO1 Wave
 71 VCO2 Wave
 17:49 VCO2 Freq
-18:50:DEFAULT=64 VCO2 Beat
+18:50 VCO2 Beat
 81:DEFAULT=0 Note Sync
 5:0 Glide Rate
 65 Glide Switch
@@ -62,7 +62,7 @@ INCHAN NULL
 83:DEFAULT=0 Legato Glide
 15:47 VCO1 Level
 16:48 VCO2 Level
-27:59:DEFAULT=64 Ext In Level
+27:59 Ext In Level
 19:51 Filter Cutoff
 21:52 Filter Resonance
 22:50 Filter EG Amount
