@@ -13,7 +13,7 @@ OUTPORT A
 OUTCHAN 5
 
 # Can be NONE, ALLACTIVE, A, B, USBH, USBD, CVG, or NULL
-INPORT ALLACTIVE
+INPORT A
 
 # Can be x (between 1-16), ALL, or NULL. This definition will be ignored if INPORT is NONE, ALLACTIVE or CVG
 INCHAN 5
