@@ -1,0 +1,42 @@
+VERSION 1
+TRACKNAME D-05
+TYPE POLY
+OUTPORT NULL
+OUTCHAN NULL
+INPORT NULL
+INCHAN NULL
+
+[PC]
+1:87:0 Internal 1
+1:87:1 Internal 2
+1:87:2 Internal 3
+1:87:3 Internal 4
+1:87:4 Internal 5
+1:87:5 Internal 6
+1:87:6 Internal 7
+1:87:7 Internal 8
+1:87:8 Preset 1
+1:87:9 Preset 2
+1:87:10 Preset 3
+1:87:11 Preset 4
+1:87:12 Preset 5
+1:87:13 Preset 6
+[/PC]
+
+[CC]
+1 Modwheel
+7 Volume
+5 Portamento Time
+65 Portamento
+64 Hold
+[/CC]
+
+[ASSIGN]
+[/ASSIGN]
+
+[AUTOMATION]
+[/AUTOMATION]
+
+[COMMENT]
+Roland D-05
+[/COMMENT]

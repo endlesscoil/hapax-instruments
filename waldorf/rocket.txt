@@ -1,0 +1,47 @@
+VERSION 1
+
+TRACKNAME Rocket
+TYPE POLY
+OUTPORT NULL
+OUTCHAN NULL
+INPORT NULL
+INCHAN NULL
+
+[CC]
+1 Modwheel
+31 OSC Shape
+70 OSC Wave
+28 Semitone
+29 Detune
+79 OSC Tune
+80 Vibr Mod
+5 Glide
+
+12 Arp Range
+13 Arp Direction
+14 Arp Tempo
+
+71 VCF RES
+74 VCF FREQ
+83 VCF Keytrack
+103 Env SUS switch
+64 Sustain
+72 Env Release
+73 Env Mod
+75 Env Decay
+
+18 LFO Target
+76 LFO Speed
+77 LFO Depth
+78 LFO Shape
+[/CC]
+
+[ASSIGN]
+[/ASSIGN]
+
+[AUTOMATION]
+[/AUTOMATION]
+
+[COMMENT]
+Waldorf Rocket - Latest firmware required for some CC values
+[/COMMENT]

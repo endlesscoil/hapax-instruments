@@ -1,0 +1,120 @@
+VERSION 1
+TRACKNAME Pulse 2
+TYPE POLY
+OUTPORT NULL
+OUTCHAN NULL
+INPORT NULL
+INCHAN NULL
+
+[PC]
+1:0:0 Bank 0
+101:0:1 Bank 1
+201:0:2 Bank 2
+301:0:3 Bank 3
+401:0:4 Bank 4
+411:0:4 INIT
+500:0:4 RANDOM
+[/PC]
+
+[CC]
+1 Modwheel
+5 Glide Rate
+62 Glidemod
+7 Volume
+10 Pan
+14 Env VCF Attack
+15 Env VCF Decay
+16 Env VCF Sustain
+17 Env VCF Release
+18 Env AMP Attack
+19 Env AMP Decay
+20 Env AMP Sustain
+21 Env AMP Release
+24 LFO 1 Speed
+25 LFO 1 Shp
+26 LFO 2 Speed
+27 LFO 2 Delay
+34 OSC1 Shape
+35 OSC1 Pwm
+70 OSC1 Semitone
+71 OSC1 Detune
+73 OSC1 Keytrack
+36 OSC2 Semitone
+37 OSC2 Detune
+38 OSC2 Shape
+39 OSC2 Pwm
+40 OSC2 Keytrack
+41 OSC3 Sync
+42 OSC3 Semitone
+43 OSC3 Detune
+44 OSC3 Shape
+72 OSC3 Route
+45 OSC1 Level
+46 OSC2 Level
+47 OSC3 Level
+102 Unison Detune
+103 OSC1 Fade
+104 OSC2 Fade
+48 Noise
+49 VCF Type
+50 VCF Cutoff
+56 VCF Res
+51 VCF Keytrack
+53 VCF Velocity
+52 Env Amount
+57 VCA Volume
+58 VCA Velocity
+59 VCA Pan
+29 Env VCF trig
+74 Env VCF loop
+75 Env Amp loop
+31 Env Amp trig
+76 Drive
+77 Drive type
+79 Arp Switch
+80 Arp Range
+81 Arp Tempo
+82 Arp Clock
+83 Arp Mode
+84 Step Duration
+85 Arp Swing
+86 Arp Delay
+87 Pattern Length
+88 Accent
+105 Bend Up
+106 Bend Down
+108 Mod1 Source
+109 Mod1 Amount
+110 Mod1 Target
+111 Mod2 Source
+112 Mod2 Amount
+113 Mod2 Target
+114 Mod3 Source
+115 Mod3 Amount
+116 Mod3 Target
+117 Mod4 Source
+118 Mod4 Amount
+119 Mod4 Target
+90 Mod5 Source
+91 Mod5 Amount
+92 Mod5 Target
+93 Mod6 Source
+94 Mod6 Amount
+95 Mod6 Target
+96 Mod7 Source
+97 Mod7 Amount
+98 Mod7 Target
+99 Mod8 Source
+100 Mod8 Amount
+101 Mod8 Target
+[/CC]
+
+[ASSIGN]
+[/ASSIGN]
+
+[AUTOMATION]
+[/AUTOMATION]
+
+[COMMENT]
+WALDORF PULSE 2
+[/COMMENT]

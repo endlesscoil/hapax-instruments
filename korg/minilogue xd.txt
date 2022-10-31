@@ -1,0 +1,86 @@
+VERSION 1
+TRACKNAME Minilogue XD
+TYPE POLY
+OUTPORT NULL
+OUTCHAN NULL
+INPORT NULL
+INCHAN NULL
+
+[PC]
+[/PC]
+
+[CC]
+1 Modwheel
+7 Volume
+5 Portamento
+11 Expression
+27 Voice-Depth
+
+50 VCO1 Wave
+48 VCO1 Octave
+34 VCO1 Pitch
+36 VCO1 Shape
+51 VCO2 Wave
+49 VCO1 Octave
+35 VCO1 Pitch
+37 VCO1 Shape
+80 OSC-Sync On/Off
+81 Ring On/Off
+41 Cross-Mod Depth
+
+53 ME Type
+103 ME Sub-Type
+54 ME Shape
+104 Shift Shape
+
+39 Mix VCO1
+40 Mix VCO2
+33 Mix ME
+
+43 VCF FREQ
+44 VCF RES
+84 VCF DRV
+85 VCF Keytrack
+
+16 Amp Attack
+17 Amp Decay
+18 Amp Sustain
+19 Amp Release
+
+20 EG Attack
+21 EG Decay
+22 EG Intesity
+23 EG Target
+
+57 LFO Wave
+58 LFO Mode
+24 LFO Rate
+26 LFO Intensity
+56 LFO Target
+
+88 Mod Type
+96 Mod Sub-Type
+28 Mod Time
+29 Mod Depth
+89 DLY Type
+105 DLY Time
+112 DLY Depth
+107 DLY Dry/Wet
+90 RVB Type
+114 RVB Time
+115 RVB Depth
+110 RVB Dry/Wet
+
+92 Mod On/Off
+94 DLY On/Off
+95 RVB On/Off
+[/CC]
+
+[ASSIGN]
+[/ASSIGN]
+[AUTOMATION]
+[/AUTOMATION]
+
+[COMMENT]
+Korg Minilogue XD
+[/COMMENT]

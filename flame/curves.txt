@@ -1,0 +1,50 @@
+VERSION 1
+TRACKNAME Curves
+TYPE POLY
+OUTPORT NULL
+OUTCHAN NULL
+INPORT NULL
+INCHAN NULL
+
+[CC]
+1 Fill
+2 Env All
+3 Variation
+4 VCA Band 1
+8 VCA Band 2
+9 VCA Band 3
+10 VCA Band 4
+11 VCA Band 5
+12 VCA Band 6
+13 VCA Band 7
+14 VCA Band 8
+15 VCA Band 9
+16 VCA Band 10
+17 VCA Band 11
+18 VCA Band 12
+19 ENV Band 1
+20 ENV Band 2
+21 ENV Band 3
+22 ENV Band 4
+23 ENV Band 5
+24 ENV Band 6
+25 ENV Band 7
+26 ENV Band 8
+27 ENV Band 9
+28 ENV Band 10
+29 ENV Band 11
+30 ENV Band 12
+[/CC]
+
+[ASSIGN]
+1 CC:1
+2 CC:2
+3 CC:3
+[/ASSIGN]
+
+[AUTOMATION]
+[/AUTOMATION]
+
+[COMMENT]
+Bands playable from keys 36/C2 to 47
+[/COMMENT]

@@ -1,0 +1,149 @@
+VERSION 1
+TRACKNAME Blofeld
+TYPE POLY
+OUTPORT NULL
+OUTCHAN NULL
+INPORT NULL
+INCHAN NULL
+
+[PC]
+1:0:0 Bank A Patch 1
+1:1:0 Bank B Patch 1
+1:2:0 Bank C Patch 1
+1:3:0 Bank D Patch 1
+1:4:0 Bank E Patch 1
+1:5:0 Bank F Patch 1
+1:6:0 Bank F Patch 1
+1:7:0 Bank H Patch 1
+[/PC]
+
+[CC]
+1 ModWheel
+2 Breath Ctrl
+4 Foot Ctrl
+5 Glide Rate
+65 Glide Active
+51 Glide Mode
+64 SustPedal
+66 Sostenuto
+7 Channal VOL
+10 Pan
+
+27 Osc1 Octave
+28 Osc1 Semitone
+29 Osc1 Detune
+30 Osc1 FM
+31 Osc1 Shape
+33 Osc1 PW
+34 Osc1 PWM
+
+35 Osc2 Octave
+36 Osc2 Semitone
+37 Osc2 Detune
+38 Osc2 FM
+39 Osc2 Shape
+40 Osc2 PW
+41 Osc2 PWM
+
+42 Osc3 Octave
+43 Osc3 Semitone
+44 Osc3 Detune
+45 Osc3 FM
+46 Osc3 Shape
+47 Osc3 PW
+48 Osc3 PWM
+
+49 Sync
+50 Pitchmod
+
+52 Osc1 Level
+53 Osc1 Balance
+54 Ring Level
+55 Ring Balance
+56 Osc2 Level
+57 Osc2 Balance
+58 Osc3 Level
+59 Osc3 Balance
+60 Noise Level
+61 Noise Balance
+62 Noise Colour
+67 Routing
+
+68 F1 Type
+69 F1 Cutoff
+70 F1 Resonance
+71 F1 Drive
+72 F1 Keytrack
+73 F1 EnvAmount
+74 F1 EnvVelocity
+75 F1 CutoffMod
+76 F1 FM
+77 F1 Pan
+78 F1 Panmod
+79 F2 Type
+80 F2 Cutoff
+81 F2 Resonance
+82 F2 Drive
+83 F2 Keytrack
+84 F2 EnvAmount
+85 F2 EnvVelocity
+86 F2 CutoffMod
+87 F2 FM
+88 F2 Pan
+89 F2 Panmod
+90 Amp Volume
+91 Amp Velocity
+92 Amp Mod
+93 FX1 Mix
+94 FX2 Mix
+
+95 FENV Attack
+96 FENV Dec
+97 FENV Sust
+98 FENV Dec2
+99 FENV Sust2
+100 FENV Release
+101 AENV Attack
+102 AENV Dec
+103 AENV Sust
+104 AENV Dec2
+105 AENV Sust2
+106 AENV Release
+107 ENV3 Attack
+108 ENV3 Dec
+109 ENV3 Sust
+110 ENV3 Dec2
+111 ENV3 Sust2
+112 ENV3 Release
+113 ENV4 Attack
+114 ENV4 Dec
+115 ENV4 Sust
+116 ENV4 Dec2
+117 ENV4 Sust2
+118 ENV4 Release
+
+12 Arp Range
+13 Arp Length
+14 Arp Active
+15 LFO1 Shape
+16 LFO1 Speed
+17 LFO1 Sync
+18 LFO1 Delay
+19 LFO2 Shape
+20 LFO2 Speed
+21 LFO2 Sync
+22 LFO2 Delay
+23 LFO3 Shape
+24 LFO3 Speed
+25 LFO3 Sync
+26 LFO3 Delay
+
+120 SoundsOff
+121 ResetControllers
+122 LocalControl
+123 NotesOff
+[/CC]
+
+[COMMENT]
+Blofeld can be in multimode, chan 1...16 control their respective sound
+[/COMMENT]

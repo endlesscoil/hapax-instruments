@@ -1,0 +1,50 @@
+VERSION 1
+TRACKNAME Mother-32
+TYPE POLY
+OUTPORT NULL
+OUTCHAN NULL
+INPORT NULL
+INCHAN NULL
+
+[PC]
+1 Pattern 1
+16 Pattern 16
+32 Pattern 32
+64 Pattern 64
+71 Out Accent
+72 Out Clock Default
+73 Out Clock Div 2
+74 Out Clock Div 4
+75 Out Step Ramp
+76 Out Step Saw
+77 Out Step Triangle
+78 Out Step Random
+79 Out Step 1 Trigger
+80 Out Midi Velocity
+81 Out Midi Ch Pressure
+82 Out Midi Pitch Bend
+83 Out Midi CC 1
+84 Out Midi CC 2
+85 Out Midi CC 4
+86 Out Midi CC 7
+[/PC]
+
+[CC]
+1 Assign 1
+2 Assign 2
+4 Assign 3
+7 Assign 4
+5 Portamento Time
+65 Portamento
+64 Sustain
+[/CC]
+
+[ASSIGN]
+[/ASSIGN]
+
+[AUTOMATION]
+[/AUTOMATION]
+
+[COMMENT]
+Moog Mother-32
+[/COMMENT]

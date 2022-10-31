@@ -1,0 +1,68 @@
+VERSION 1
+TRACKNAME Polymoon
+TYPE POLY
+OUTPORT NULL
+OUTCHAN NULL
+INPORT NULL
+INCHAN NULL
+
+[PC]
+1 Preset 1
+2 Preset 2
+3 Preset 3
+4 Preset 4
+5 Preset 5
+6 Preset 6
+7 Preset 7
+8 Preset 8
+9 Preset 9
+10 Preset 10
+11 Preset 11
+12 Preset 12
+13 Preset 13
+14 Preset 14
+15 Preset 15
+16 Preset 16
+[/PC]
+
+[CC]
+4 Expression Pedal
+9 Dotted 8th
+14 Bypass
+15 Tempo-10ms Intervals
+16 Time
+17 Feedback
+18 Mix
+19 Multiply
+20 Dimension
+21 Dynamics
+22 Early Modulation
+23 Feedback Filter
+24 Delay Level
+25 Late Modulation
+26 Dyn Flanger Mode
+27 Dyn Flanger Speed
+28 Tap
+29 Phaser Mode
+30 Flanger Feedback
+31 Half Speed
+[/CC]
+
+[ASSIGN]
+1 CC:22
+2 CC:23
+3 CC:24
+4 CC:27
+5 CC:30
+6 CC:26
+7 CC:9
+8 CC:25
+[/ASSIGN]
+
+
+[AUTOMATION]
+[/AUTOMATION]
+
+[COMMENT]
+Meris Polymoon Pedal
+[/COMMENT]

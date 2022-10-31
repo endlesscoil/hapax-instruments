@@ -1,0 +1,39 @@
+VERSION 1
+TRACKNAME Minibrute
+TYPE POLY
+OUTPORT NULL
+OUTCHAN NULL
+INPORT NULL
+INCHAN NULL
+
+[CC]
+102 Midi Receive Channel # 1-16, 17 all, default 1
+103 Midi Send Channel # 1-16, default 1
+108 Sync Source # 0-41 auto, 42 to 83 Int, 84-127 ext
+109 Env Legato Mode # <64 Off
+110 LFO Retrig Mode # <64 Off
+111 Note Priority # 0-41 last, 42-83 low, 84-127 high
+112 Velocity Curve # 0-41 lin, 42-83 log, 84-127 antilog
+115 Audio In Threshold # 0-41 low, 42-83 mid, 84-127 high
+116 Aftertouch Curve # 0-41 exp, 42-83 log, 84-127 lin
+117 Arp Hold # <64 off
+122 Local On-Off # 0 off, 127 on
+[/CC]
+
+[ASSIGN]
+1 CC:109
+2 CC:110
+3 CC:111
+4 CC:112
+5 CC:115
+6 CC:116
+7 CC:117
+# 8 CC:122 DEFAULT=0
+[/ASSIGN]
+
+[AUTOMATION]
+[/AUTOMATION]
+
+[COMMENT]
+Arturia Minibrute Midi
+[/COMMENT]

@@ -1,0 +1,57 @@
+VERSION 1
+TRACKNAME NTS-1
+TYPE POLY
+OUTPORT NULL
+OUTCHAN NULL
+INPORT NULL
+INCHAN NULL
+
+[CC]
+53 OSC Type
+54 OSC Shape
+55 OSC Alt
+42 VCF Type
+43 VCF Cutoff
+44 VCF Resonance
+14 EG Type
+16 Attack
+19 Release
+20 Trmlo Depth
+21 Trmlo Rate
+24 LFO Rate
+26 LFO Depth
+88 Mod Type
+28 Mod Time
+29 Mod Depth
+89 Dly Type
+30 Dly Time
+31 Dly Depth
+33 Dly Mix
+90 Rvrb Type
+34 Rvrb Time
+35 Rvrb Depth
+36 Rvrb Mix
+45 FSweep Depth
+46 FSweep Rate
+117 ARP Pattern
+118 ARP Interval
+119 ARP Length
+[/CC]
+
+[ASSIGN]
+1 CC:53
+2 CC:54
+3 CC:14
+4 CC:16
+5 CC:19
+6 CC:42
+7 CC:43
+8 CC:44
+[/ASSIGN]
+
+[AUTOMATION]
+[/AUTOMATION]
+
+[COMMENT]
+Korg NTS-1
+[/COMMENT]
