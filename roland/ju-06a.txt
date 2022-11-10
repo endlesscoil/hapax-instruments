@@ -1,0 +1,141 @@
+VERSION 1
+TRACKNAME JU-06A
+TYPE POLY
+OUTPORT NULL
+OUTCHAN NULL
+INPORT NULL
+INCHAN NULL
+
+[PC]
+1 LD Echolocator
+2 BS WalkMe Bass
+3 SY Poly Chord
+4 PD Crystal Pad
+5 PD Porta Pad
+6 KY Delicate Keys
+7 FX Drone Mass
+8 SY BuzzDrone
+9 SY PCH Chase
+10 SY Dusty Funk
+11 SY Rock 85
+12 SY Echo Poly
+13 SY Snow Drops
+14 KY Organish
+15 PD Dyno Sweep
+16 PD Ripple Pad
+17 PD Saturate Pad
+18 PD FoundUndergnd
+19 PD Kyoushin
+20 PD Reflecting
+21 PD Resonator
+22 BS Ouch Bass
+23 BS Juice Bass
+24 BS Killer Bass
+25 BS Parameter Bs
+26 BS Slow Blob
+27 BS Big Blade Bs
+28 LD Rip Lead
+29 LD Silo Lead
+30 LD Echo Chamber
+31 LD Soul Icon
+32 FX KickRise
+33 1982 Strings 2
+34 1982 Strings 3
+35 1982 Organ 1
+36 1982 Phase Brs
+37 1982 Piano 1
+38 1982 MellowPiano
+39 1982 Harpsichd 2
+40 1982 Guitar
+41 1982 Synth Harp
+42 1982 Bass 1
+43 1982 Clav 1
+44 1982 Pizzicato 1
+45 1982 Xylophone
+46 1982 Glocken
+47 1982 Violine
+48 1982 Trumpet
+49 1982 Tuba
+50 1982 Flute
+51 1982 Clarinet
+52 1982 Wah Bass
+53 1982 PhaseCombi
+54 1982 Reed 1
+55 1982 Pop Pluck
+56 1982 PWM Chorus
+57 1982 SynthOrgan
+58 1982 Space 1
+59 1982 Space 2
+60 1982 Whistle
+61 1982 UFO
+62 1982 Space 3
+63 1982 Surf
+64 1982 Synth Drum
+[/PC]
+
+
+[CC]
+12 DCO RANGE
+13 DCO LFO DEPTH
+14 DCO PWM
+15 DCO LFO TARGET
+16 DCO SQR SWITCH
+17 DCO SAW SWITCH
+28 DCO SUB SWITCH
+18 DCO SUB LVL
+19 DCO NSE LVL
+
+20 HPF FREQ
+21 VCF ENV POLARITY
+22 VCF ENV DEPTH
+23 VCF LFO
+24 VCF KEYTRACK
+
+25 VCA ENV
+26 VCA LVL
+
+29 LFO WAVE
+30 LFO TRIG
+3 LFO RATE
+9 LFO DELAY
+
+73 ENV ATK
+75 ENV DEC
+27 ENV SUS
+72 ENV REL
+74 VCF FRQ
+71 VCF RES
+
+82 DLY TIME
+83 DLY FDBK
+89 DLY SW
+91 DLY LVL
+93 CHORUS TYPE
+
+86 POLY-MONO-UNISON
+1 MODWHEEL
+11 EXPR PDL
+64 SUSTAIN
+65 PORTAMENTO
+5 PORTAMENTO TIME
+87 BEND RANGE
+88 CLCK SYNC
+[/CC]
+
+[ASSIGN]
+1 CC:89 # Delay switch
+2 CC:82 # Delay time
+3 CC:83 # Delay fbk
+4 CC:91 # Delay level
+5 CC:88 # Clock sync
+6 CC:86 # Bend range
+7 CC:65 # portamento
+8 CC:5 # portamento time
+[/ASSIGN]
+
+[AUTOMATION]
+[/AUTOMATION]
+
+[COMMENT]
+64 presets - no MSB LSB needed
+[/COMMENT]

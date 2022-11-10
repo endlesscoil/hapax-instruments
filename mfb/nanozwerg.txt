@@ -1,0 +1,19 @@
+VERSION 1
+TRACKNAME Nanozwerg
+TYPE POLY
+OUTPORT NULL
+OUTCHAN NULL
+INPORT NULL
+INCHAN NULL
+
+[CC]
+1 Modwheel # affects cutoff and lfo rate
+[/CC]
+
+[ASSIGN]
+1 CC:1
+[/ASSIGN]
+
+[COMMENT]
+MFB Nanozwerg
+[/COMMENT]

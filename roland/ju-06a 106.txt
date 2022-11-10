@@ -1,0 +1,140 @@
+VERSION 1
+TRACKNAME JU-06A 106
+TYPE POLY
+OUTPORT NULL
+OUTCHAN NULL
+INPORT NULL
+INCHAN NULL
+
+[PC]
+1 Brass
+2 Brass Swell
+3 Trumpet
+4 Flute
+5 Moving Strings
+6 Brass And Strings
+7 Choir
+8 Piano I
+9 Organ I
+10 Organ II
+11 Combo Organ
+12 Calliope
+13 Donald Pluck
+14 Celesta
+15 Electric Piano 1
+16 Electric Piano 2
+17 Clock Chime
+18 Steel Drums
+19 Xylophone
+20 Brass II
+21 Fanfare
+22 Strings
+23 Pizzicato
+24 High Strings
+25 80s JU Brass
+26 Hop
+27 PW Moment
+28 Noisy Poly
+29 Reso Up
+30 Trance Pluck
+31 Chord Line
+32 Juno Reso Bs
+33 Rude Bass
+34 Junoa Bass
+35 Sub Deep
+36 Heavy Solid Bs
+37 Plastik Bass
+38 Deep Bass
+39 Cargo Bass
+40 Big Boy
+41 Sweep Bass
+42 80s JU Lead
+43 Cloud Sines
+44 Unison Lead
+45 Metal Swell
+46 Bright n Warm
+47 Dirty Down Lead
+48 B4 U Came
+49 Brass Pad
+50 Brass Pad 2
+51 Sine Pad
+52 LFO Pad
+53 Slow Riser
+54 Priority Pad
+55 PWM Stringer
+56 Synth Dude
+57 AmbiHoover
+58 Grain Pad
+59 Mellow Wurly
+60 Drone Zone
+61 Jet Setter
+62 Louis Weapon
+63 Periscope
+64 Takeoff
+[/PC]
+
+[CC]
+12 DCO RANGE
+13 DCO LFO DEPTH
+14 DCO PWM
+15 DCO LFO TARGET
+16 DCO SQR SWITCH
+17 DCO SAW SWITCH
+28 DCO SUB SWITCH
+18 DCO SUB LVL
+19 DCO NSE LVL
+
+20 HPF FREQ
+21 VCF ENV POLARITY
+22 VCF ENV DEPTH
+23 VCF LFO
+24 VCF KEYTRACK
+
+25 VCA ENV
+26 VCA LVL
+
+29 LFO WAVE
+30 LFO TRIG
+3 LFO RATE
+9 LFO DELAY
+
+73 ENV ATK
+75 ENV DEC
+27 ENV SUS
+72 ENV REL
+74 VCF FRQ
+71 VCF RES
+
+82 DLY TIME
+83 DLY FDBK
+89 DLY SW
+91 DLY LVL
+93 CHORUS TYPE
+
+86 POLY-MONO-UNISON
+1 MODWHEEL
+11 EXPR PDL
+64 SUSTAIN
+65 PORTAMENTO
+5 PORTAMENTO TIME
+87 BEND RANGE
+88 CLCK SYNC
+[/CC]
+
+[ASSIGN]
+1 CC:89 # Delay switch
+2 CC:82 # Delay time
+3 CC:83 # Delay fbk
+4 CC:91 # Delay level
+5 CC:88 # Clock sync
+6 CC:86 # Bend range
+7 CC:65 # portamento
+8 CC:5 # portamento time
+[/ASSIGN]
+
+[AUTOMATION]
+[/AUTOMATION]
+
+[COMMENT]
+64 presets - no MSB LSB needed
+[/COMMENT]
