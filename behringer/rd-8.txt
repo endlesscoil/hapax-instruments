@@ -1,0 +1,60 @@
+VERSION 1 # Currently, this should only be 1.
+
+###### DEFINITIONS
+
+# Supports all alphanumeric ASCII, and ' ', '_', '-', '+'
+# Can also be omitted or NULL to not override the current track name, e.g. "TRACKNAME NULL"
+TRACKNAME RD8
+
+# Can be POLY, DRUM, MPE, or NULL
+TYPE DRUM
+
+# Can be A, B, C, D, USBD, USBH, CVGx (x between 1&4), CVx, Gx, or NULL
+OUTPORT NULL
+
+# Can be x (between 1-16), or NULL -- this is ignored if output port is not MIDI
+OUTCHAN NULL
+
+# Can be NONE, ALLACTIVE, A, B, USBH, USBD, CVG, or NULL
+INPORT NULL
+
+# Can be x (between 1-16), ALL, or NULL -- ignored if INPORT is NONE, ALLACTIVE or CVG
+INCHAN NULL
+
+# DRUMLANES
+# Syntax: ROW:TRIG:CHAN:NOTENUMBER NAME
+# ROW must be between 1 and 8
+# TRIG can be between 0 and 127, or NULL
+# CHAN can be a number between 1 and 16, Gx, CVx, CVGx (x between 1 and 4), or NULL
+# NOTENUMBER can be between 0 and 127, or NULL
+# NAME supports all alphanumeric ASCII, and ' ', '_', '-', '+' - can also be NULL
+# Please note this section will be discarded for tracks which are not DRUM tracks
+# Additional note numbers - 45:LTOM,47:MTOM,50:HTOM
+# Change channel and note order below to suit personal preference
+[DRUMLANES]
+1:NULL:10:36 KICK
+2:NULL:10:40 SNAR
+3:NULL:10:37 RIM
+4:NULL:10:39 CLAP
+5:NULL:10:56 COW
+6:NULL:10:51 CYMB
+7:NULL:10:46 OPHH
+8:NULL:10:42 CLHH
+[/DRUMLANES]
+
+# PC
+# Syntax: NUMBER NAME
+# number must be either:
+#   - A number (for simple PC)
+#   - Three numbers, delimited by ':', which represent PC:MSB:LSB. You can put 'NULL' to not set the MSB/LSB.
+# PC must be between 1...128
+# MSB/LSB must be between 0...127
+[PC]
+1 INIT
+1:1:NULL
+[/PC]
+
+# This section will be readable from Hapax.
+[COMMENT]
+Behringer RD8
+[/COMMENT]
