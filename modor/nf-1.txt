@@ -1,0 +1,150 @@
+VERSION 1 # Currently, this should only be 1.
+
+# Supports all alphanumeric ASCII, and ' ', '_', '-', '+' - can also be NULL
+TRACKNAME Modor NF-1
+
+# Can be POLY, DRUM, MPE, or NULL
+TYPE POLY
+
+# Can be A, B, C, D, USBD, USBH, CVGx (x between 1&4), CVx, Gx, or NULL
+OUTPORT NULL
+
+# Can be x (between 1-16), or NULL -- this is ignored if output port is not MIDI
+OUTCHAN NULL
+
+# Can be NONE, ALLACTIVE, A, B, USBH, USBD, CVG, or NULL
+INPORT NULL
+
+# Can be x (between 1-16), ALL, or NULL. This definition will be ignored if INPORT is NONE, ALLACTIVE or CVG
+INCHAN NULL
+ 
+
+# PC
+# Syntax: NUMBER NAME
+# number must be either:
+#   - A number (for simple PC)
+#   - Three numbers, delimited by ':', which represent PC:MSB:LSB. You can put 'NULL' to not set the MSB/LSB.
+# PC must be between 1...128
+# MSB/LSB must be between 0...127
+[PC]
+
+[/PC]
+
+
+# CC
+# Syntax: CC_NUMBER NAME or CC_NUMBER:DEFAULT=xx NAME
+# DEFAULT_VALUE must be a valid number between 0 and 127
+[CC]
+1 ModWheel
+2 BreathContrl
+3 Mod CC3
+4 ExprPed
+5 Portamento
+7 Volume
+10 Pan
+13 Osc1ModLFO1
+14 Osc2ModLFO1
+15 Osc3ModLFO1
+16 Osc1ModENV2
+17 Osc1ModENV3
+18 Osc1ModENV4
+19 Pitch ENV1
+20 PitchLFO SH
+21 CombFltDpth
+22 CombFltDlay
+23 LFO2 Speed
+24 CombFltFdbk
+26 CombFltSpd
+27 CombFltMix
+28 Delay Time
+29 Delay Filtr
+30 Delay Mix
+31 Filter ENV2
+32 Bank Select
+37 Filter LFO2
+38 Filter KEYB
+39 FormantENV3
+40 FormantLFO2
+41 Vowel 1 Vol
+42 Vowel 2 Vol
+43 Vowel 3 Vol
+44 Wire1Amount
+45 Wire2Amount
+46 Wire3Amount
+47 Wire4Amount
+48 Wire5Amount
+49 Wire6Amount
+50 Wire7Amount
+51 Delay Feedb
+52 LFO3 Speed
+53 SandH Speed
+55 Osc1 Coarse
+56 Osc2 Coarse
+57 Osc3 Coarse
+58 Osc1 Fine
+59 Osc2 Fine
+60 Osc3 Fine
+61 Osc1 Vol
+62 Osc2 Vol
+63 Osc3 Vol
+64 Sus Pedal
+65 Osc1 Mod
+66 Osc2 Mod
+67 Osc3 Mod
+68 FilterType
+70 NoiseLevel
+71 FilterFreq
+72 FormntMrph
+73 FormantMix
+74 FilterReso
+75 LFO1 Speed
+76 FiltrDrive
+77 RingVolume
+78 ENV1 T1
+79 ENV2 T1
+80 ENV3 T1
+81 ENV4 T1
+82 ENV1 T2
+83 ENV2 T2
+84 ENV3 T2
+85 ENV4 T2
+86 ENV1 T3
+87 ENV2 T3
+88 ENV3 T3
+89 ENV4 T3
+90 ENV1 T4
+91 ENV2 T4
+92 ENV3 T4
+93 ENV4 T4
+94 ENV1 L1
+95 ENV2 L1
+96 ENV3 L1
+97 ENV4 L1
+98 ENV1 L2
+99 ENV2 L2
+100 ENV3 L2
+101 ENV4 L2
+102 ENV1 L3
+103 ENV2 L3
+104 ENV3 L3
+105 ENV4 L3
+106 Vowel1 Frm1
+107 Vowel1 Frm2
+108 Vowel1 Frm3
+109 Vowel1 Frm4
+110 Vowel2 Frm1
+111 Vowel2 Frm2
+112 Vowel2 Frm3
+113 Vowel2 Frm4
+114 Vowel3 Frm1
+115 Vowel3 Frm2
+116 Vowel3 Frm3
+117 Vowel3 Frm4
+127 AllNotesOff
+[/CC]
+
+
+# This section will be readable from Hapax.
+[COMMENT]
+Modor NF-1 v4
+[/COMMENT]
