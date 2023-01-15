@@ -1,0 +1,176 @@
+VERSION 1 # Currently, this should only be 1.
+
+# Supports all alphanumeric ASCII, and ' ', '_', '-', '+' - can also be NULL
+TRACKNAME Nymphes
+
+# Can be POLY, DRUM, MPE, or NULL
+TYPE POLY
+
+# Can be A, B, C, D, USBD, USBH, CVGx (x between 1&4), CVx, Gx, or NULL
+OUTPORT NULL
+
+# Can be x (between 1-16), or NULL -- this is ignored if output port is not MIDI
+OUTCHAN NULL
+
+# Can be NONE, ALLACTIVE, A, B, USBH, USBD, CVG, or NULL
+INPORT NULL
+
+# Can be x (between 1-16), ALL, or NULL. This definition will be ignored if INPORT is NONE, ALLACTIVE or CVG
+INCHAN NULL
+ 
+
+# PC
+# Syntax: NUMBER NAME
+# number must be either:
+#   - A number (for simple PC)
+#   - Three numbers, delimited by ':', which represent PC:MSB:LSB. You can put 'NULL' to not set the MSB/LSB.
+# PC must be between 1...128
+# MSB/LSB must be between 0...127
+[PC]
+1:0:NULL User 1
+# add user patches here....
+1:1:NULL LONG PAD 1
+2:1:NULL MOVING PAD
+3:1:NULL SOFT PAD 1
+4:1:NULL LEAD
+5:1:NULL ETHEREAL 1
+6:1:NULL BASS 1
+7:1:NULL ETHEREAL 2
+8:1:NULL PAD 1
+9:1:NULL SOFT PAD 2
+10:1:NULL DEEP PAD 1
+11:1:NULL NILS LEAD
+12:1:NULL PAD 2
+13:1:NULL SHEARING
+14:1:NULL THIN PAD
+15:1:NULL EPIC
+16:1:NULL RADIO
+17:1:NULL SPACE 1
+18:1:NULL DEEP PAD 2
+19:1:NULL SPACE 2
+20:1:NULL ETHEREAL 3
+21:1:NULL ETHEREAL 4
+22:1:NULL BRASS 1
+23:1:NULL BRASS 2
+24:1:NULL BRASS 3
+25:1:NULL PIANO
+26:1:NULL ORGAN
+27:1:NULL ELC PIANO
+28:1:NULL FLUTE
+29:1:NULL FAT UNISON
+30:1:NULL RUN ARP
+31:1:NULL MONOPHONIC
+32:1:NULL SLIDE CHORD
+33:1:NULL BASS 2
+34:1:NULL CHORD PROG
+35:1:NULL BASS 3
+36:1:NULL KICK
+37:1:NULL SNARE
+38:1:NULL TOM
+39:1:NULL HAT
+40:1:NULL CLAP
+41:1:NULL STICK
+42:1:NULL DISCO
+43:1:NULL CLICKY
+44:1:NULL PSEUDO DELAY
+45:1:NULL S+H VCF
+46:1:NULL BROKEN
+47:1:NULL SEASIDE
+48:1:NULL INITIAL (POLY)
+49:1:NULL INITIAL (UNISON)
+[/PC]
+
+
+# CC
+# Syntax: CC_NUMBER NAME or CC_NUMBER:DEFAULT=xx NAME
+# DEFAULT_VALUE must be a valid number between 0 and 127
+[CC]
+1 Mod Wheel
+3 LPF EG depth
+4 LPF Tracking
+5 Glide
+7 AMP level
+8 LFO Cutoff Depth
+9 OSC level
+10 Sub level
+11 Noise level
+12 Pulse Width
+13 LFO Pitch Depth
+14 EG Pitch Depth
+15 Detune
+16 Chord Selector
+17 Play Mode
+18 LFO 1 Rate
+19 LFO 1 Wave
+20 LFO 1 Delay
+21 LFO 1 Fade
+22 LFO 1 Type
+23 LFO 1 Key Sync
+24 LFO 2 Rate
+25 LFO 2 Wave
+26 LFO 2 Delay
+27 LFO 2 Fade
+28 LFO 2 Type
+29 LFO 2 Key Sync
+30 MS Selector
+31 MS OSC Wave Depth
+32 MS OSC Level Depth
+33 MS Sub Level Depth
+34 MS Noise Level Depth
+35 MS LFO Pitch Depth Depth
+36 MS PulseWidth Depth
+37 MS Glide Depth
+39 MS Detune Depth
+40 MS Chord Selector Depth
+41 MS EG Pitch Depth Depth
+42 MS LPF Cutoff Depth
+43 MS Resonance Depth
+44 MS LPF EG Depth Depth
+45 MS HPF Cutoff Depth
+46 MS LPF Tracking Depth
+47 MS LPF Cutoff LFO Depth Depth
+48 MS Filter EG Attack Depth
+49 MS Filter EG Decay Depth
+50 MS Filter EG Sustain Depth
+51 MS Filter EG Release Depth
+52 MS Filter AMP Attack Depth
+53 MS Filter AMP Decay Depth
+54 MS Filter AMP Sustain Depth
+55 MS Filter AMP Release Depth
+56 MS LFO 1 Rate Depth
+57 MS LFO 1 Wave Depth
+58 MS LFO 1 Delay Depth
+59 MS LFO 1 Fade Depth
+60 MS LFO 2 Rate Depth
+61 MS LFO 2 Wave Depth
+62 MS LFO 2 Delay Depth
+63 MS LFO 2 Fade Depth
+86 MS Reverb Size Depth
+87 MS Reverb Decay Depth
+88 MS Reverb Filter Depth
+89 MS Reverb Mix Depth
+64 Sustain Pedal
+68 legato
+70 OSC Wave
+71 Resonance
+72 AMP EG Release
+73 AMP EG Attack
+74 LPF Cutoff
+75 Reverb Size
+76 Reverb Decay
+77 Reverb Filter
+78 Reverb Mix
+79 Filter EG Attack
+80 Filter EG Decay
+81 HPF Cutoff
+82 Filter EG Sustain
+83 Filter EG Release
+84 AMP EG Decay
+85 AMP EG Sustain
+[/CC]
+
+
+# This section will be readable from Hapax.
+[COMMENT]
+Dreadbox Nymphes
+[/COMMENT]

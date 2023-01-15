@@ -1,0 +1,201 @@
+VERSION 1
+TRACKNAME PROPHET REV2
+TYPE POLY
+OUTPORT NULL
+OUTCHAN NULL
+INPORT NULL
+INCHAN NULL
+MAXRATE NULL
+
+
+[PC]
+[/PC]
+
+
+[CC]
+1 Mod Wheel
+3 FX Type
+5 Glide Mode
+7 Master Volume
+8 Sub Oscillator
+9 Osc. Slop
+10 Pan Mod Mode
+12 FX Param 1
+13 FX Param 2
+14 BPM
+15 Clock Divide
+16 FX On/Off
+17 FX Mix
+18 A/B Mode
+19 Sequencer Type
+20 Osc1 Frequency
+21 Osc1 Fine Tune
+22 Osc1 Shape
+23 Osc1 Glide Rate/Time
+24 Osc2 Frequency
+25 Osc2 Fine Tune
+26 Osc2 Shape
+27 Osc2 Glide Rate/Time
+28 Osc Mix
+29 Noise Level
+30 Osc1 Shape Mod
+31 Osc2 Shape Mod
+33 Arp On/Off
+34 Arp Mode
+35 Arp Range
+36 Arp Repeats
+37 Voice Volume
+39 Split Point
+64 Sustain Pedal
+65 Glide On/Off
+75 Amp Sustain
+76 Amp Release
+77 Env3 Sustain
+78 Env3 Release
+85 Env3 Destination
+86 Env3 Amount
+87 Env3 Velocity
+88 Env3 Delay
+89 Env3 Attack
+90 Env3 Decay
+102 Filter Frequency
+103 Resonance
+104 Filter Key Amount
+105 Filter Audio Mod
+106 Filter Env. Amount
+107 Filter Env. Velocity
+108 Filter Delay
+109 Filter Attack
+110 Filter Decay
+111 Filter Sustain
+112 Filter Release
+113 VCA Level
+114 Pan Spread
+115 Amp Env. Amount
+116 Amp Env. Velocity
+117 Amp Delay
+118 Amp Attack
+119 Amp Decay
+[/CC]
+
+[NRPN]
+0:0:7 N Osc1 Freq
+0:1:7 N Osc1 Freq Fine
+0:2:7 N Osc1 Shape 
+0:3:7 N Osc1 Glide 
+0:4:7 N Osc1 KBD on/off
+0:5:7 N Osc2 Freq 
+0:6:7 N Osc2 Freq Fine 
+0:7:7 N Osc2 Shape 
+0:8:7 N Osc2 Glide 
+0:10:7 N Sync On/Off 
+0:11:7 N Gld Mode
+0:12:7 N Slop
+0:13:7 N Osc Mix 
+0:14:7 N Noise
+0:15:7 N Fltr Cutoff
+0:16:7 N Fltr Res
+0:17:7 N Key Track
+0:18:7 N Audio Mod
+0:19:7 N 2 pl/4 pl mde
+0:20:7 N Fltr Env Amt
+0:21:7 N Fltr Env Vel
+0:22:7 N Fltr Env Dly
+0:23:7 N Fltr Env Att
+0:24:7 N Fltr Env Dec
+0:25:7 N Fltr Env Sus
+0:26:7 N Fltr Env Rel
+0:28:7 N Pan Spread
+0:29:7 N Voice Volume 
+0:30:7 N VCA Env Amt
+0:31:7 N VCA Env Vel
+0:32:7 N VCA Env Del
+0:33:7 N VCA Env Att
+0:34:7 N VCA Env Dec 
+0:35:7 N VCA Env Sus 
+0:36:7 N VCA Env Rel 
+0:37:7 N VCA Env Rel
+0:38:7 N LFO1 Shape 
+0:39:7 N LFO1 Amoun 
+0:40:7 N LFO1 Dest 
+0:41:7 N LFO1 Clk Sync 
+0:42:7 N LFO2 Freq
+0:43:7 N LFO2 Shape 
+0:44:7 N LFO2 Amnt 
+0:45:7 N LFO2 Dest
+0:46:7 N LFO2 Clk Sync 
+0:47:7 N LFO3 Freq
+0:48:7 N LFO3 Shape
+0:49:7 N LFO2 Amnt
+0:50:7 N LFO Dest
+0:51:7 N LFO3 Clk Sync
+0:52:7 N LFO Freq
+0:53:7 N LFO4 Shape
+0:54:7 N LFO4 Amnt
+0:55:7 N LFO4 Dest
+0:56:7 N LFO4 Clk Sync
+0:57:7 N Env3 Dest
+0:58:7 N Env3 Amnt
+0:59:7 N Env3 Vel
+0:60:7 N Env3 Del
+0:61:7 N Env3 Att
+0:62:7 N Env3 Dec
+0:63:7 N Env3 Sus
+0:64:7 N Env3 Rel
+0:65:7 N Mod1 Source
+0:66:7 N Mod1 Amnt
+0:67:7 N Mod1 Dest
+0:68:7 N Mod2 Source
+0:69:7 N Mod2 Amnt
+0:70:7 N Mod2 Dest
+0:71:7 N Mod3 Source
+0:72:7 N Mod3 Amnt
+0:73:7 N Mod3 Dest
+0:74:7 N Mod4 Source
+0:75:7 N Mod4 Amnt
+0:76:7 N Mod4 Dest
+0:77:7 N Mod5 Source
+0:78:7 N Mod5 Amnt
+0:79:7 N Mod5 Dest
+0:80:7 N Mod6 Source
+0:81:7 N Mod6 Amnt
+0:82:7 N Mod6 Dest
+0:83:7 N Mod7 Source
+0:84:7 N Mod7 Amnt
+0:85:7 N Mod7 Dest
+0:86:7 N Mod8 Source
+0:87:7 N Mod8 Amnt
+0:88:7 N Mod8 Dest
+0:97:7 N Env3 Rept On/Off
+0:99:7 N Osc1 Note Rset
+0:102:7 N Osc1 Pul Wid
+0:103:7 N Osc2 Pul Wid
+0:104:7 N Osc2 Note Reset
+0:105:7 N LFO1 Key Sync
+0:106:7 N LFO2 Key Sync
+0:107:7 N LFO3 Key Sync
+0:108:7 N LFO4 Key Sync
+0:111:7 N Gld On/Off
+0:113:7 N Ptch Bnd Rge
+0:114:7 N Pan Mode
+0:116:7 N Mod Whl Amnt
+0:117:7 N Mod Whl Dest
+0:118:7 N Presr Amnt
+0:119:7 N Presr Dest
+0:120:7 N Brth Amnt
+0:121:7 N Brth Dest
+0:122:7 N Velo Amnt
+0:123:7 N Velo Dest
+0:124:7 N Ft Ctrl Amnt
+0:125:7 N Ft Ctrl Dest
+1:25:7 N FX On/Off
+1:26:7 N FX Select
+1:28:7 N FX Param 1
+1:29:7 N FX Param 2
+[/NRPN]
+
+
+# This section will be readable from Hapax.
+[COMMENT]
+REV2 CCs and NRPNs
+[/COMMENT]

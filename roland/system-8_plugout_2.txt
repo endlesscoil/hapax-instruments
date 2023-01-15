@@ -1,0 +1,185 @@
+VERSION 1 # Currently, this should only be 1.
+
+###### DEFINITIONS
+
+# Supports all alphanumeric ASCII, and ' ', '_', '-', '+'
+# Can also be omitted or NULL to not override the current track name, e.g. "TRACKNAME NULL"
+TRACKNAME System-8
+
+# Can be POLY, DRUM, MPE, or NULL
+TYPE POLY
+
+# Can be A, B, C, D, USBD, USBH, CVGx (x between 1&4), CVx, Gx, or NULL
+OUTPORT NULL
+
+# Can be x (between 1-16), or NULL -- this is ignored if output port is not MIDI
+OUTCHAN NULL
+
+# Can be NONE, ALLACTIVE, A, B, USBH, USBD, CVG, or NULL
+INPORT NULL
+
+# Can be x (between 1-16), ALL, or NULL -- ignored if INPORT is NONE, ALLACTIVE or CVG
+INCHAN NULL
+
+# PC
+# Syntax: NUMBER NAME
+# number must be either:
+#   - A number (for simple PC)
+#   - Three numbers, delimited by ':', which represent PC:MSB:LSB. You can put 'NULL' to not set the MSB/LSB.
+# PC must be between 1...128
+# MSB/LSB must be between 0...127
+[PC]
+1:2:85 Plug-out 2 A1
+2:2:85 Plug-out 2 A2
+3:2:85 Plug-out 2 A3
+4:2:85 Plug-out 2 A4
+5:2:85 Plug-out 2 A5
+6:2:85 Plug-out 2 A6
+7:2:85 Plug-out 2 A7
+8:2:85 Plug-out 2 A8
+9:2:85 Plug-out 2 B1
+10:2:85 Plug-out 2 B2
+11:2:85 Plug-out 2 B3
+12:2:85 Plug-out 2 B4
+13:2:85 Plug-out 2 B5
+14:2:85 Plug-out 2 B6
+15:2:85 Plug-out 2 B7
+16:2:85 Plug-out 2 B8
+17:2:85 Plug-out 2 C1
+18:2:85 Plug-out 2 C2
+19:2:85 Plug-out 2 C3
+20:2:85 Plug-out 2 C4
+21:2:85 Plug-out 2 C5
+22:2:85 Plug-out 2 C6
+23:2:85 Plug-out 2 C7
+24:2:85 Plug-out 2 C8
+25:2:85 Plug-out 2 D1
+26:2:85 Plug-out 2 D2
+27:2:85 Plug-out 2 D3
+28:2:85 Plug-out 2 D4
+29:2:85 Plug-out 2 D5
+30:2:85 Plug-out 2 D6
+31:2:85 Plug-out 2 D7
+32:2:85 Plug-out 2 D8
+33:2:85 Plug-out 2 E1
+34:2:85 Plug-out 2 E2
+35:2:85 Plug-out 2 E3
+36:2:85 Plug-out 2 E4
+37:2:85 Plug-out 2 E5
+38:2:85 Plug-out 2 E6
+39:2:85 Plug-out 2 E7
+40:2:85 Plug-out 2 E8
+41:2:85 Plug-out 2 F1
+42:2:85 Plug-out 2 F2
+43:2:85 Plug-out 2 F3
+44:2:85 Plug-out 2 F4
+45:2:85 Plug-out 2 F5
+46:2:85 Plug-out 2 F6
+47:2:85 Plug-out 2 F7
+48:2:85 Plug-out 2 F8
+49:2:85 Plug-out 2 G1
+50:2:85 Plug-out 2 G2
+51:2:85 Plug-out 2 G3
+52:2:85 Plug-out 2 G4
+53:2:85 Plug-out 2 G5
+54:2:85 Plug-out 2 G6
+55:2:85 Plug-out 2 G7
+56:2:85 Plug-out 2 G8
+57:2:85 Plug-out 2 H1
+58:2:85 Plug-out 2 H2
+59:2:85 Plug-out 2 H3
+60:2:85 Plug-out 2 H4
+61:2:85 Plug-out 2 H5
+62:2:85 Plug-out 2 H6
+63:2:85 Plug-out 2 H7
+64:2:85 Plug-out 2 H8
+[/PC]
+
+# CC
+# Syntax: CC_NUMBER NAME or CC_NUMBER:DEFAULT=xx NAME
+# DEFAULT_VALUE must be a valid number between 0 and 127
+[CC]
+11 VOLUME
+3 CUTOFF
+9 RESO
+108 FILTER TYPE
+51 FILTER VARIATION
+53 FILTER VELOCITY SENS
+79 HPF CUTOFF
+81 FILTER ENV
+82 FILTER KEY
+83 FILTER ATTACK
+84 FILTER DECAY
+85 FILTER SUSTAIN
+86 FILTER RELEASE
+89 AMP ATTACK
+90 AMP DECAY
+96 AMP SUSTAIN
+97 AMP RELEASE
+69 AMP TONE
+70 EFFECTS TYPE
+71 EFFECTS TONE
+12 EFFECTS DEPTH
+72 DELAY/CHORUS TYPE
+13 DELAY/CHORUS TIME
+94 DELAY/CHORUS LEVEL
+73 REVERB TYPE
+74 REVERB TIME
+91 REVERB LEVEL
+29 LFO RATE
+27 LFO FADE TIME
+26 LFO PITCH
+28 LFO FILTER
+30 LFO AMP
+35 LFO WAVE
+14 LFO VARIATION
+15 LFO TRIG ENV
+22 PITCH ENV
+23 PITCH ATTACK
+24 PITCH DECAY
+16 MIXER OSC1
+17 MIXER OSC2
+18 MIXER OSC3/SUB OSC
+19 MIXER NOISE
+46 OSC1 WAVE
+103 OSC1 VARIATION
+47 OSC1 OCTAVE
+20 OSC1 COARSE TUNE
+21 OSC1 FINE TUNE
+50 OSC1 COLOR
+60 OSC1 MOD
+52 OSC1 CROSS MOD
+61 OSC2 WAVE
+104 OSC2 VARIATION
+62 OSC2 OCTAVE
+87 OSC2 COARSE TUNE
+56 OSC2 FINE TUNE
+55 OSC2 COLOR
+63 OSC2 MOD
+111 OSC2 RING
+112 OSC2 SYNC
+107 OSC3/SUB OSC WAVE
+48 OSC3/SUB OSC TUNE
+25 OSC3/SUB OSC COLOR
+114 MIXER NOISE TYPE
+110 AMP LEVEL
+54 AMP VELOCITY SENS
+117 LFO KEY TRIG
+118 TEMPO SYNC
+119 MONO
+5 PORTAMENTO
+116 LEGATO
+1 MOD
+80 MOD SENS PITCH
+109 MOD SENS FILTER
+49 BEND GAIN
+41 BEND RANGE
+68 BEND SENS PITCH
+75 BEND SENS FILTER
+64 PEDAL HOLD
+[/CC]
+
+# This section will be readable from Hapax.
+[COMMENT]
+
+[/COMMENT]

@@ -1,0 +1,104 @@
+VERSION 1 # Currently, this should only be 1.
+
+TRACKNAME TNZ NO RS
+
+# Can be POLY, DRUM, MPE, or NULL
+TYPE DRUM
+
+# Can be A, B, C, D, USBD, USBH, CVGx (x between 1&4), CVx, Gx, or NULL
+OUTPORT NULL
+
+# Can be x (between 1-16), or NULL -- this is ignored if output port is not MIDI
+OUTCHAN NULL
+
+# Can be NONE, ALLACTIVE, A, B, USBH, USBD, CVG, or NULL
+INPORT NULL
+
+# Can be x (between 1-16), ALL, or NULL. This definition will be ignored if INPORT is NONE, ALLACTIVE or CVG
+INCHAN NULL
+
+# DRUMLANES
+# Syntax: ROW:TRIG:CHAN:NOTENUMBER NAME
+# ROW must be between 1 and 8
+# TRIG can be between 0 and 127, or NULL
+# CHAN can be a number between 1 and 16, Gx, CVx, CVGx (x between 1 and 4), or NULL
+# NOTENUMBER can be between 0 and 127, or NULL
+# NAME supports all alphanumeric ASCII, and ' ', '_', '-', '+' - can also be NULL
+# Please note this section will be discarded for tracks which are not DRUM tracks
+[DRUMLANES]
+8:NULL:08:56 TNZ SP2A
+7:NULL:08:55 TNZ SP2
+6:NULL:08:54 TNZ SP1A
+5:NULL:08:53 TNZ SP1
+4:NULL:08:52 TNZ TT
+3:NULL:08:51 TNZ HC
+2:NULL:08:49 TNZ SD
+1:NULL:08:48 TNZ BD
+[/DRUMLANES]
+
+
+# PC
+# Syntax: NUMBER NAME
+# number must be either:
+#   - A number (for simple PC)
+#   - Three numbers, delimited by ':', which represent PC:MSB:LSB. You can put 'NULL' to not set the MSB/LSB.
+# PC must be between 1...128
+# MSB/LSB must be between 0...127
+[PC]
+1 INIT
+1:NULL:NULL
+[/PC]
+
+# CC
+# Syntax: CC_NUMBER NAME or CC_NUMBER:DEFAULT=xx NAME
+# DEFAULT_VALUE must be a valid number between 0 and 127
+[CC]
+2 BD ATT
+64 BD DEC
+65 BD PITCH
+3 BD TUNE
+4 BD NOISE
+5 BD NOISE-DEC
+6 BD DIST
+66 BD TRIGGER
+11 SD TUNE
+13 SD NOISE
+67 SD NOISE-DEC
+70 SD TRIGGER
+71 SD DECAY-TONE
+75 CP DECAY
+18 CP FILTER
+76 CP ATTACK
+77 CP TRIGGER
+19 TT TUNE
+20 TT DECAY
+78 TT TRIGGER
+79 TT ATTACK
+82 TT PITCH
+73 TT PAN
+84 SP1 TUNE
+85 SP1 DECAY
+86 SP1 SAMPLE1
+87 SP1 SAMPLE2
+88 SP1 ATTACK
+89 SP2 TUNE
+90 SP2 DECAY
+91 SP2 SAMPLE1
+92 SP2 SAMPLE2
+93 SP2 ATTACK
+[/CC]
+
+
+[AUTOMATION]
+CC:86 DEFAULT=64
+CC:87 DEFAULT=64
+CC:91 DEFAULT=64
+CC:92 DEFAULT=64
+[/AUTOMATION]
+
+
+
+# This section will be readable from Hapax.
+[COMMENT]
+Tanzmaus Channel 8 from note 48 - No Rimshot! Default automation lanes for sample selects.
+[/COMMENT]

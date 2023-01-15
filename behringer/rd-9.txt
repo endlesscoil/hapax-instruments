@@ -1,0 +1,47 @@
+VERSION 1 # Currently, this should only be 1.
+
+# Supports all alphanumeric ASCII, and ' ', '_', '-', '+' - can also be NULL
+TRACKNAME RD-9
+
+# Can be POLY, DRUM, MPE, or NULL
+TYPE DRUM
+
+# Can be A, B, C, D, USBD, USBH, CVGx (x between 1&4), CVx, Gx, or NULL
+OUTPORT NULL
+
+# Can be x (between 1-16), or NULL -- this is ignored if output port is not MIDI
+OUTCHAN NULL
+
+# Can be NONE, ALLACTIVE, A, B, USBH, USBD, CVG, or NULL
+INPORT NULL
+
+# Can be x (between 1-16), ALL, or NULL. This definition will be ignored if INPORT is NONE, ALLACTIVE or CVG
+INCHAN NULL
+
+# DRUMLANES
+# Syntax: ROW:TRIG:CHAN:NOTENUMBER NAME
+# ROW must be between 1 and 8
+# TRIG can be between 0 and 127, or NULL
+# CHAN can be a number between 1 and 16, Gx, CVx, CVGx (x between 1 and 4), or NULL
+# NOTENUMBER can be between 0 and 127, or NULL
+# NAME supports all alphanumeric ASCII, and ' ', '_', '-', '+' - can also be NULL
+# Please note this section will be discarded for tracks which are not DRUM tracks
+[DRUMLANES]
+1:NULL:10:36 KICK
+2:NULL:10:40 SNARE
+3:NULL:10:45 LO TOM
+4:NULL:10:47 MID TOM
+5:NULL:10:50 HI TOM
+6:NULL:10:39 CLAP
+7:NULL:10:46 OPEN HH
+8:NULL:10:42 CLSD HH
+# X:NULL:10:37 RIMSHOT
+# X:NULL:10:56 COWBELL
+# X:NULL:10:51 RIDE
+# X:NULL:10:49 CRASH
+[/DRUMLANES]
+
+# This section will be readable from Hapax.
+[COMMENT]
+Behringer RD-9
+[/COMMENT]
