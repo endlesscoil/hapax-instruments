@@ -1,0 +1,363 @@
+VERSION 1 # Currently, this should only be 1.
+
+# Supports all alphanumeric ASCII, and ' ', '_', '-', '+' - can also be NULL
+TRACKNAME Summit
+
+# Can be POLY, DRUM, MPE, or NULL
+TYPE POLY
+
+# Can be A, B, C, D, USBD, USBH, CVGx (x between 1&4), CVx, Gx, or NULL
+OUTPORT NULL
+
+# Can be x (between 1-16), or NULL -- this is ignored if output port is not MIDI
+OUTCHAN NULL
+
+# Can be NONE, ALLACTIVE, A, B, USBH, USBD, CVG, or NULL
+INPORT NULL
+
+# Can be x (between 1-16), ALL, or NULL. This definition will be ignored if INPORT is NONE, ALLACTIVE or CVG
+INCHAN NULL
+
+# DRUMLANES
+# Syntax: ROW:TRIG:CHAN:NOTENUMBER NAME
+# ROW must be between 1 and 8
+# TRIG can be between 0 and 127, or NULL
+# CHAN can be a number between 1 and 16, Gx, CVx, CVGx (x between 1 and 4), or NULL
+# NOTENUMBER can be between 0 and 127, or NULL
+# NAME supports all alphanumeric ASCII, and ' ', '_', '-', '+' - can also be NULL
+# Please note this section will be discarded for tracks which are not DRUM tracks
+[DRUMLANES]
+[/DRUMLANES]
+
+
+# PC
+# Syntax: NUMBER NAME
+# number must be either:
+#   - A number (for simple PC)
+#   - Three numbers, delimited by ':', which represent PC:MSB:LSB. You can put 'NULL' to not set the MSB/LSB.
+# PC must be between 1...128
+# MSB/LSB must be between 0...127
+[PC]
+[/PC]
+
+
+# CC
+# Syntax: CC_NUMBER NAME or CC_NUMBER:DEFAULT=xx NAME
+# DEFAULT_VALUE must be a valid number between 0 and 127
+[CC]
+3:64 Osc1 Range
+14:64 Osc1 Coarse
+15:64 Osc1 Fine
+9:64 Osc1 Mod2Pitch
+16:64 Osc1 LFO2Pitch
+12:64 Osc1 Shape
+119:64 Osc1 Mod1Shape
+33:64 Osc1 LFO1Shape
+34:0 Osc1 VSync
+
+37:64 Osc2 Range
+17:64 Osc2 Coarse
+18:64 Osc2 Fine
+38:64 Osc2 Mod2Pitch
+19:64 Osc2 LFO2Pitch
+39:64 Osc2 Shape
+40:64 Osc2 Mod1Shape
+41:64 Osc2 LFO1Shape
+42:0 Osc2 VSync
+
+65:64 Osc3 Range
+20:64 Osc3 Coarse
+21:64 Osc3 Fine
+43:64 Osc3 Mod2Pitch
+22:64 Osc3 LFO2Pitch
+71:64 Osc3 Shape
+72:64 Osc3 Mod1Pitch
+73:64 Osc3 LFO1Shape
+44:0 Osc3 Vsync
+
+5:60 Glide Time
+35:0 Glide On
+
+23:127 Osc1 Mix
+24:0 Osc2 Mix
+25:0 Osc3 Mix
+26:0 RingMod Mix
+27:0 Noise Mix
+
+80:0 Filt OverDrv
+36:0 Filt PostDrv
+75:127 Filt Track
+79:0 Resonance
+29:127 Cutoff
+28:64 LFO1-Filt
+76:0 Osc3-Filt
+77:64 Amp-Filt
+78:64 Mod1-Filt
+
+86:0 Amp Attack
+87:90 Amp Decay
+88:127 Amp Sustain
+89:40 Amp Release
+
+90:0 Mod1 Attack
+91:75 Mod1 Decay
+92:35 Mod1 Sustain
+93:45 Mod1 Release
+
+94:0 Mod2 Attack
+95:75 Mod2 Decay
+117:35 Mod2 Sustain
+103:45 Mod2 Release
+
+30:64 LFO1 Rate
+81:16 LFO1 SyncRate
+82:0 LFO1 Fade
+
+83:0 LFO2 Range
+31:64 LFO2 Rate
+84:12 LFO2 SyncRate
+85:0 LFO2 Fade
+
+104:0 Dist Level
+108:0 Delay Level
+109:64 Delay Time
+110:64 Delay Fbk
+112:0 Reverb Level
+113:90 Reverb Time
+105:0 Chorus Level
+118:20 Chorus Rate
+107:64 Chorus Fbk
+
+116:64 Arp/Clock Gate
+
+114:0 Animate1 Hold
+115:0 Animate2 Hold
+[/CC]
+
+
+# NRPN
+# Syntax: "MSB:LSB:DEPTH NAME" or "MSB:LSB:DEPTH:DEFAULT=xx NAME"
+# Lsb & msb should be between 0 and 127
+# DEPTH can be 7 or 14
+# For NRPN: DEFAULT_VALUE must be a valid number, either between 0 and 127 (for 7 bit NRPNs) or between 0 and 16383 (for 14bit NRPNs)
+[NRPN]
+0:2:7:3 Voice Mode
+0:3:7:0 Unison
+0:4:7:25 Unison Detune
+0:5:7:0 Spread
+0:51:7:0 PanPosn
+0:52:7:0 Spreadmode
+
+0:7:7:64 PreGlide
+
+0:9:7:0 Diverge
+0:10:7:0 Drift
+0:11:7:127 Noise LPF
+0:12:7:0 Noise HPF
+
+0:14:7:2 Osc1 Wave
+0:15:7:4 Osc1 WaveMore
+0:17:7:0 Osc1 SawDense
+0:18:7:0 Osc1 SawDetune
+0:19:7:0 Osc1 FixedNote
+0:20:7:76 Osc1 BendRange
+
+0:23:7:2 Osc2 Wave
+0:24:7:4 Osc2 WaveMore
+0:26:7:0 Osc2 SawDense
+0:27:7:64 Osc2 SawDetune
+0:28:7:0 Osc2 FixedNote
+0:29:7:76 Osc2 BendRange
+
+0:32:7:2 Osc3 Wave
+0:33:7:4 Osc3 WaveMore
+0:35:7:0 Osc3 SawDense
+0:36:7:64 Osc3 SawDetune
+0:37:7:0 Osc3 FixedNote
+0:38:7:0 Osc3 BendRange
+
+0:41:7:64 PatchLevel
+0:42:7:127 VCALevel
+0:43:7:127 DryLevel
+0:44:7:127 WetLevel
+
+0:45:7:1 FiltSlope
+0:46:7:0 FiltType
+0:47:7:1 FiltEnvSelect
+0:48:7:0 FiltDiverge
+
+0:55:7:64 AmpVel
+0:56:7:0 AmpTrig
+0:60:7:64 Mod1Vel
+0:61:7:1 Mod1Trig
+0:64:7:64 Mod2Vel
+0:65:7:1 Mod2Trig
+
+0:68:7:0 LFO1Range
+0:69:7:0 LFO1Wave
+0:70:7:0 LFO1Phase
+0:71:7:0 LFO1Slew
+0:72:7:0 LFO1FadeIn-Out
+0:75:7:0 LFO1Oneshot
+0:76:7:0 LFO1Common
+
+0:78:7:0 LFO2Wave
+0:79:7:0 LFO2Phase
+0:80:7:0 LFO2 Slew
+0:81:7:0 LFO2FadeIn-Out
+0:84:7:0 LFO2OneShot
+0:85:7:0 LFO2Common
+
+0:88:7:0 FXBypass
+0:89:7:0 FXRouting
+
+0:91:7:0 DlyRatio
+0:92:7:64 DlyWidth
+0:93:7:0 DlySync
+0:94:7:4 DlySyncTime
+0:95:7:85 DlyLPDamp
+0:96:7:0 DlyHPDamp
+0:97:7:32 DlySlew
+
+0:101:7:2 RevType
+0:102:7:50 RevLPDamp
+0:103:7:1 RevHPDamp
+0:104:7:64 RevSize
+0:105:7:64 RevMod
+0:106:7:4 RevModRate
+0:107:7:74 RevLPF
+0:108:7:0 RevHPF
+0:109:7:40 RevPreDly
+
+0:111:7:2 ChorusType
+0:112:7:64 ChorusModDpth
+0:113:7:90 ChorusLPF
+0:114:7:2 ChorusHPF
+0:115:7:0 Ch-Fl-Ph
+
+25:0:7:0 LFO3Wave
+25:1:7:64 LFO3Rate
+25:2:7:0 LFOSyncRate
+25:3:7:0 LFO4Wave
+25:4:7:64 LFO4Rate
+25:5:7:5 LFO4Sync
+
+25:6:7:0 TuningTable
+
+25:9:7:0 Filtshape
+25:10:7:64 FiltSeparate
+
+25:11:7:0 ExtAudIn
+
+25:13:7:0 FMOsc3-1
+25:14:7:0 Env2Osc3-1
+25:15:7:0 LFO2Osc3-1
+
+25:17:7:0 FMOsc1-2
+25:18:7:0 Env2Osc1-2
+25:19:7:0 LFO2Osc2-1
+
+25:21:7:0 FMOsc2-3
+25:22:7:0 Env2Osc2-3
+25:23:7:0 LFO2Osc2-3
+
+25:25:7:0 LFO3Sync
+25:26:7:0 LFO4Sync
+
+0:58:7:0 Env1Reps
+0:63:7:0 Env2Reps
+0:67:7:0 Env3Reps
+
+25:27:7:0 Env1Loop
+25:28:7:0 Env2Loop
+25:29:7:0 Env3Loop
+
+25:30:7:0 Env1Del
+25:31:7:0 Env2Del
+25:32:7:0 Env3Del
+
+25:33:7:100 ArpChance
+
+25:34:7:0 Anim1Att
+25:35:7:0 Anim1Rel
+25:36:7:0 Anim2Att
+25:37:7:0 Anim2Rel
+
+25:38:7:0 LFO3Phase
+25:39:7:0 LFO3Slew
+25:40:7:0 LFO3Fade
+
+25:41:7:0 LFO4Phase
+25:42:7:0 LFO4Slew
+25:43:7:0 LFOFade
+
+25:44:7:0 Deltype
+25:45:7:0 DelOutput
+
+1:2:7:64 ModMx1Depth
+2:2:7:64 ModMx2Depth
+3:2:7:64 ModMx3Depth
+4:2:7:64 ModMx4Depth
+5:2:7:64 ModMx5Depth
+6:2:7:64 ModMx6Depth
+7:2:7:64 ModMx7Depth
+8:2:7:64 ModMx8Depth
+9:2:7:64 ModMx9Depth
+10:2:7:64 ModMx10Depth
+11:2:7:64 ModMx11Depth
+12:2:7:64 ModMx12Depth
+13:2:7:64 ModMx13Depth
+14:2:7:64 ModMx14Depth
+15:2:7:64 ModMx15Depth
+16:2:7:64 ModMx16Depth
+
+17:2:7:64 FXMx1Depth
+18:2:7:64 FXMx2Depth
+19:2:7:64 FXMx3Depth
+20:2:7:64 FXMx4Depth
+21:2:7:64 FXMx5Depth
+22:2:7:64 FXMx6Depth
+23:2:7:64 FXMx7Depth
+24:2:7:64 FXMx8Depth
+[/NRPN]
+
+
+# ASSIGN
+# Syntax: POT_NUMBER TYPE:VALUE or POT_NUMBER TYPE:VALUE DEFAULT=DEFAULT_VALUE
+# POT_NUMBER must be between 1 and 8
+# TYPE can be "CC", "PB" (pitchbend), "AT" (aftertouch), "CV", "NRPN", or "NULL" (this won't assign the pot).
+# Non explicitly-defined pots will be considered "NULL"
+# VALUE VALIDATION
+#### For CC: Value must be a valid number between 0 and 119
+#### For PB and AT, any text after the TYPE will be ignored
+#### For CV, value must be between 1 and 4
+#### For NRPN, value must be MSB:LSB:DEPTH, with both lsb & msb bebtween 0 and 127, and DEPTH being either 7 or 14
+# DEFAULT VALUE
+#### For CC: DEFAULT_VALUE must be a valid number between 0 and 127
+#### For PB: DEFAULT_VALUE must be a valid number between 0 and 16383
+#### For NRPN: DEFAULT_VALUE must be a valid number, either between 0 and 127 (for 7 bit NRPNs) or between 0 and 16383 (for 14bit NRPNs)
+#### For CV: DEFAULT_VALUE must be either a valid number between 0 and 65535, or a voltage between -5V and 5V, e.g. "-4.25V" or "1.7V"
+#### Please note default value will be ignored for PB and AT messages.
+[ASSIGN]
+1 CC:29:127 		#Cutoff
+2 CC:79:0		#Resonance	
+3 CC:108:0		#DelLev
+4 CC:112:0		#RevLev
+[/ASSIGN]
+
+
+# AUTOMATION
+# Syntax: TYPE:VALUE
+# TYPE can be "CC", "PB" (pitchbend), "AT" (aftertouch), "CV", or "NRPN"
+# VALUE VALIDATION
+#### For CC: Value must be a valid number between 0 and 119
+#### For PB and AT, any text after the TYPE will be ignored
+#### For CV, value must be between 1 and 4
+#### For NRPN, value must be MSB:LSB:DEPTH, with both lsb & msb bebtween 0 and 127, and DEPTH being either 7 or 14
+[AUTOMATION]
+[/AUTOMATION]
+
+
+# This section will be readable from Hapax.
+[COMMENT]
+[/COMMENT]
