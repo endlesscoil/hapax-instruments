@@ -1,0 +1,136 @@
+VERSION 1 # Currently, this should only be 1.
+
+###### DEFINITIONS
+
+# Supports all alphanumeric ASCII, and ' ', '_', '-', '+'
+# Can also be omitted or NULL to not override the current track name, e.g. "TRACKNAME NULL"
+TRACKNAME TYPHON
+
+# Can be POLY, DRUM, MPE, or NULL
+TYPE POLY
+
+# Can be A, B, C, D, USBD, USBH, CVGx (x between 1&4), CVx, Gx, or NULL
+OUTPORT NULL 
+
+# Can be x (between 1-16), or NULL -- this is ignored if output port is not MIDI
+OUTCHAN NULL
+
+# Can be NONE, ALLACTIVE, A, B, USBH, USBD, CVG, or NULL
+INPORT NULL
+
+# Can be x (between 1-16), ALL, or NULL -- ignored if INPORT is NONE, ALLACTIVE or CVG
+INCHAN NULL
+
+# PC
+# Syntax: NUMBER NAME
+# number must be either:
+#   - A number (for simple PC)
+#   - Three numbers, delimited by ':', which represent PC:MSB:LSB. You can put 'NULL' to not set the MSB/LSB.
+# PC must be between 1...128
+# MSB/LSB must be between 0...127
+[PC]
+1 INIT
+1:0:NULL
+[/PC]
+
+# CC
+# Syntax: CC_NUMBER NAME or CC_NUMBER:DEFAULT=xx NAME
+# DEFAULT_VALUE must be a valid number between 0 and 127
+[CC]
+1 Mod Wheel
+2 CC2
+4 Cutoff
+3 Resonance
+5 Wave
+33 VCF EG Level
+31 VCF EG Time
+27 VCF EG Attack
+28 VCF EG Decay
+29 VCF EG Sustain
+30 VCF EG Release
+38 VCA EG Time
+34 VCA EG Attack
+35 VCA EG Decay
+36 VCA EG Sustain
+37 VCA EG Release
+6 Osc 2 Tune
+7 Glide Amount
+8 VCOs Level
+9 Filter Tracking
+11 Filter FM Amount
+12 HP Cutoff
+13 HP Resonance
+14 FX1 Parameter 1
+15 FX1 Parameter 2
+16 FX1 Mix
+17 FX2 Parameter 1
+18 FX2 Parameter 2
+19 FX2 Parameter 3
+20 FX2 Parameter 4
+21 FX2 Mix
+22 FX3 Parameter 1
+23 FX3 Parameter 2
+24 FX3 Parameter 3
+25 FX3 Parameter 4
+26 FX3 Mix
+40 M1 Parameter 1
+41 M1 Parameter 2
+42 M1 Parameter 3
+43 M1 CV Level
+44 M1 CV1 Level
+45 M1 CV2 Level
+46 M1 Wave Level
+47 M1 Cutoff Level
+48 M1 VCA Level
+50 M1 FFM Level
+49 M1 FX1 Level
+51 M1 FX2 Level
+52 M1 FX3 Level
+53 M1 Custom 1 Level
+54 M1 Custom 2 Level
+55 M1 Custom 3 Level
+
+56 M2 Parameter 1
+57 M2 Parameter 2
+58 M2 Parameter 3
+59 M2 CV Level
+60 M2 CV1 Level
+61 M2 CV2 Level
+62 M2 Wave Level
+63 M2 Cutoff Level
+65 M2 VCA Level
+67 M2 FFM Level
+66 M2 FX1 Level
+68 M2 FX2 Level
+69 M2 FX3 Level
+70 M2 Custom 1 Level
+71 M2 Custom 2 Level
+72 M2 Custom 3 Level
+
+73 M3 Parameter 1
+74 M3 Parameter 2
+75 M3 Parameter 3
+76 M3 CV Level
+77 M3 CV1 Level
+78 M3 CV2 Level
+79 M3 Wave Level
+80 M3 Cutoff Level
+81 M3 VCA Level
+83 M3 FFM Level
+82 M3 FX1 Level
+84 M3 FX2 Level
+85 M3 FX3 Level
+86 M3 Custom 1 Level
+87 M3 Custom 2 Level
+88 M3 Custom 3 Level
+
+89 Seq Length
+90 Seq Division
+91 Seq Probability
+92 Seq Swing
+[/CC]
+
+# This section will be readable from Hapax.
+[COMMENT]
+
+[/COMMENT]
