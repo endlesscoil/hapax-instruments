@@ -1,0 +1,253 @@
+VERSION 1 # Currently, this should only be 1.
+
+# Supports all alphanumeric ASCII, and ' ', '_', '-', '+' - can also be NULL
+TRACKNAME DECKARDS
+
+# Can be POLY, DRUM, MPE, or NULL
+TYPE POLY
+
+# Can be A, B, C, D, USBD, USBH, CVGx (x between 1&4), CVx, Gx, or NULL
+OUTPORT NULL
+
+# Can be x (between 1-16), or NULL -- this is ignored if output port is not MIDI
+OUTCHAN NULL
+
+# Can be NONE, ALLACTIVE, A, B, USBH, USBD, CVG, or NULL
+INPORT NULL
+
+# Can be x (between 1-16), ALL, or NULL. This definition will be ignored if INPORT is NONE, ALLACTIVE or CVG
+INCHAN NULL
+
+# This defines the default 'MAX RATE' for automation lanes.
+# Can be NULL, 192, 96, 64, 48, 32, 24, 16, 12, 8, 6, 4, 3, 2, 1
+MAXRATE NULL
+
+# DRUMLANES
+# Syntax: ROW:TRIG:CHAN:NOTENUMBER NAME
+# ROW must be between 1 and 8
+# TRIG can be between 0 and 127, or NULL
+# CHAN can be a number between 1 and 16, Gx, CVx, CVGx (x between 1 and 4), or NULL
+# NOTENUMBER can be between 0 and 127, or NULL
+# NAME supports all alphanumeric ASCII, and ' ', '_', '-', '+' - can also be NULL
+# Please note this section will be discarded for tracks which are not DRUM tracks
+[DRUMLANES]
+[/DRUMLANES]
+
+
+# PC
+# Syntax: NUMBER NAME
+# number must be either:
+#   - A number (for simple PC)
+#   - Three numbers, delimited by ':', which represent PC:MSB:LSB. You can put 'NULL' to not set the MSB/LSB.
+# PC must be between 1...128
+# MSB/LSB must be between 0...127
+[PC]
+[/PC]
+
+
+# CC
+# Syntax: CC_NUMBER NAME or CC_NUMBER:DEFAULT=xx NAME
+# DEFAULT_VALUE must be a valid number between 0 and 127
+[CC]
+0 BANK SELECTION
+1 MOD WHEEL
+40 PULSE WIDTH MOD SPEED A
+41 PULSE WIDTH MOD AMOUNT A
+42 PULSE WIDTH A
+43 SQUARE A
+44 SAW A
+45 NOISE LEVEL A
+46 HIGH PASS FILTER BRILLIANCE A
+47 HIGH PASS FILTER RESONANCE A
+48 LOW PASS FILTER BRILLIANCE A
+49 LOW PASS FILTER RESONANCE A
+50 FILTER EG INITIAL LEVEL A
+51 FILTER EG AFTER LEVEL A
+52 FILTER ATTACK A
+53 FILTER DECAY A
+54 FILTER RELEASE A
+55 VCF LEVEL A
+56 SINE LEVEL A
+57 ATTACK A
+58 DECAY A
+59 SUSTAIN A
+60 RELEASE A
+61 LEVEL A
+62 INITIAL BRILLIANCE A
+63 INITIAL LEVEL A
+65 AFTER BRILLIANCE A
+66 AFTER LEVEL A
+67 PULSE WIDTH MOD SPEED B
+68 PULSE WIDTH MOD AMOUNT B
+69 PULSE WIDTH B
+70 SQUARE B
+71 SAW B
+72 NOISE LEVEL B
+73 HIGH PASS FILTER BRILLIANCE B
+119 HIGH PASS FILTER RESONANCE B
+75 LOW PASS FILTER BRILLIANCE B
+76 LOW PASS FILTER RESONANCE B
+77 FILTER EG INITIAL LEVEL B
+78 FILTER EG AFTER LEVEL B
+79 FILTER ATTACK B
+80 FILTER DECAY B
+81 FILTER RELEASE B
+82 VCF LEVEL B
+83 SINE LEVEL B
+84 ATTACK B
+85 DECAY B
+86 SUSTAIN B
+87 RELEASE B
+88 LEVEL B
+89 INIITAL BRILLIANCE B
+90 INITIAL LEVEL B
+91 AFTER BRILLIANCE B
+92 AFTER LEVEL B
+93 COARSE PITCH
+94 FINE PITCH
+95 DETUNE OSC B
+102 FEET A
+103 FEET B
+104 SUB WAVEFORM
+105 SUB SPEED
+106 SUB VCO AMOUNT
+107 SUB VCF AMOUNT
+108 SUB VCA AMOUNT
+8 MIX
+109 MASTER BRILLIANCE
+110 MASTER RESONANCE
+111 INITIAL PITCHBEND
+112 AFTER TO SUB OSCILLATOR SPEED
+113 AFTER TO VCO AMOUNT
+114 AFTER TO VCF AMOUNT
+115 KEYBOARD CONTROL BRILLIANCE LOW
+116 KEYBOARD CONTROL BRILLIANCE HIGH
+117 KEYBOARD CONTROL LEVEL LOW
+118 KEYBOARD CONTROL LEVEL HIGH
+5 GLIDE TIME
+120 GLIDE MODE
+7 GLOBAL VOLUME
+64 SUSTAIN PEDAL
+[/CC]
+
+
+# NRPN
+# Syntax: "MSB:LSB:DEPTH NAME" or "MSB:LSB:DEPTH:DEFAULT=xx NAME"
+# Lsb & msb should be between 0 and 127
+  # Note: LSB can be over 127 ONLY if MSB is 0 or omitted
+  # e.g. '0:1026:7 FOO', or ':2000:7 BAR' 
+  # the examples above would be equivalent to '8:2:7 FOO' and '15:80:7 BAR' respectively
+# DEPTH can be 7 or 14
+# For NRPN: DEFAULT_VALUE must be a valid number, either between 0 and 127 (for 7 bit NRPNs) or between 0 and 16383 (for 14bit NRPNs)
+[NRPN]
+[/NRPN]
+
+
+# ASSIGN
+# Syntax: POT_NUMBER TYPE:VALUE or POT_NUMBER TYPE:VALUE DEFAULT=DEFAULT_VALUE
+# POT_NUMBER must be between 1 and 8
+# TYPE can be "CC", "PB" (pitchbend), "AT" (aftertouch), "CV", "NRPN", or "NULL" (this won't assign the pot).
+# Non explicitly-defined pots will be considered "NULL"
+# VALUE VALIDATION
+#### For CC: Value must be a valid number between 0 and 119
+#### For PB and AT, any text after the TYPE will be ignored
+#### For CV, value must be between 1 and 4
+#### For NRPN, value must be MSB:LSB:DEPTH, with both lsb & msb bebtween 0 and 127, and DEPTH being either 7 or 14
+# DEFAULT VALUE
+#### For CC: DEFAULT_VALUE must be a valid number between 0 and 127
+#### For PB: DEFAULT_VALUE must be a valid number between 0 and 16383
+#### For NRPN: DEFAULT_VALUE must be a valid number, either between 0 and 127 (for 7 bit NRPNs) or between 0 and 16383 (for 14bit NRPNs)
+#### For CV: DEFAULT_VALUE must be either a valid number between 0 and 65535, or a voltage between -5V and 5V, e.g. "-4.25V" or "1.7V"
+#### Please note default value will be ignored for PB and AT messages.
+[ASSIGN]
+1 CC:8 DEFAULT=64 # MIX
+2 CC:61 DEFAULT=127 # LEVEL A
+3 CC:88 DEFAULT=127 # LEVEL B
+4 CC:7 DEFAULT=64 # GLOBAL VOLUME
+5 CC:105 # SUB SPEED
+6 CC:106 # SUB TO VCO
+7 CC:107 # SUB TO VCF
+8 CC:108 # SUB TO VCA
+[/ASSIGN]
+
+
+# AUTOMATION
+# Syntax: TYPE:VALUE
+# TYPE can be "CC", "PB" (pitchbend), "AT" (aftertouch), "CV", or "NRPN"
+# VALUE VALIDATION
+#### For CC: Value must be a valid number between 0 and 119
+#### For PB and AT, any text after the TYPE will be ignored
+#### For CV, value must be between 1 and 4
+#### For NRPN, value must be MSB:LSB:DEPTH, with both lsb & msb bebtween 0 and 127, and DEPTH being either 7 or 14
+# NOTE: You are limited to 64 automation lanes
+[AUTOMATION]
+#CC:40 # PULSE WIDTH MOD SPEED A
+#CC:41 # PULSE WIDTH MOD AMOUNT A
+#CC:42 # PULSE WIDTH A
+CC:45 # NOISE LEVEL A
+CC:46 # HIGH PASS FILTER BRILLIANCE A
+#CC:47 # HIGH PASS FILTER RESONANCE A
+CC:48 # LOW PASS FILTER BRILLIANCE A
+#CC:49 # LOW PASS FILTER RESONANCE A
+#CC:50 # FILTER EG INITIAL LEVEL A
+#CC:51 # FILTER EG AFTER LEVEL A
+#CC:52 # FILTER ATTACK A
+#CC:53 # FILTER DECAY A
+#CC:54 # FILTER RELEASE A
+#CC:55 # VCF LEVEL A
+#CC:56 # SINE LEVEL A
+#CC:57 # ATTACK A
+#CC:58 # DECAY A
+#CC:59 # SUSTAIN A
+#CC:60 # RELEASE A
+#CC:61 # LEVEL A
+#CC:62 # INITIAL BRILLIANCE A
+#CC:63 # INITIAL LEVEL A
+#CC:65 # AFTER BRILLIANCE A
+#CC:66 # AFTER LEVEL A
+#CC:67 # PULSE WIDTH MOD SPEED B
+#CC:68 # PULSE WIDTH MOD AMOUNT B
+#CC:69 # PULSE WIDTH B
+#CC:72 # NOISE LEVEL B
+CC:73 # HIGH PASS FILTER BRILLIANCE B
+#CC:119 # HIGH PASS FILTER RESONANCE B
+CC:75 # LOW PASS FILTER BRILLIANCE B
+#CC:76 # LOW PASS FILTER RESONANCE B
+#CC:77 # FILTER EG INITIAL LEVEL B
+#CC:78 # FILTER EG AFTER LEVEL B
+#CC:79 # FILTER ATTACK B
+#CC:80 # FILTER DECAY B
+#CC:81 # FILTER RELEASE B
+#CC:82 # VCF LEVEL B
+#CC:83 # SINE LEVEL B
+#CC:84 # ATTACK B
+#CC:85 # DECAY B
+#CC:86 # SUSTAIN B
+#CC:87 # RELEASE B
+#CC:88 # LEVEL B
+#CC:89 # INIITAL BRILLIANCE B
+#CC:90 # INITIAL LEVEL B
+#CC:91 # AFTER BRILLIANCE B
+#CC:92 # AFTER LEVEL B
+#CC:95 # DETUNE OSC B
+#CC:104 # SUB WAVEFORM
+#CC:105 # SUB SPEED
+#CC:106 # SUB VCO AMOUNT
+#CC:107 # SUB VCF AMOUNT
+#CC:108 # SUB VCA AMOUNT
+#CC:8 # MIX
+#CC:109 # MASTER BRILLIANCE
+#CC:110 # MASTER RESONANCE
+#CC:111 # INITIAL PITCHBEND
+#CC:112 # AFTER TO SUB OSCILLATOR SPEED
+#CC:113 # AFTER TO VCO AMOUNT
+#CC:114 # AFTER TO VCF AMOUNT
+#CC:5 # GLIDE TIME
+#CC:7 # GLOBAL VOLUME
+[/AUTOMATION]
+
+
+# This section will be readable from Hapax.
+[COMMENT]
+[/COMMENT]
+
