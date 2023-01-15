@@ -1,0 +1,155 @@
+VERSION 1 # Currently, this should only be 1.
+
+###### DEFINITIONS
+
+# Supports all alphanumeric ASCII, and ' ', '_', '-', '+' - can also be NULL
+TRACKNAME DIGITAKT
+
+# Can be POLY, DRUM, MPE, or NULL
+TYPE DRUM
+
+# Can be A, B, C, D, USBD, USBH, CVGx (x between 1&4), CVx, Gx, or NULL
+OUTPORT NULL
+
+# Can be x (between 1-16), or NULL -- this is ignored if output port is not MIDI
+OUTCHAN NULL
+
+# Can be NONE, ALLACTIVE, A, B, USBH, USBD, CVG, or NULL
+INPORT NONE
+
+# Can be x (between 1-16), ALL, or NULL. This definition will be ignored if INPORT is NONE, ALLACTIVE or CVG
+INCHAN NONE
+
+# DRUMLANES
+# Syntax: ROW:TRIG:CHAN:NOTENUMBER NAME
+# ROW must be between 1 and 8
+# TRIG can be between 0 and 127, or NULL
+# CHAN can be a number between 1 and 16, Gx, CVx, CVGx (x between 1 and 4), or NULL
+# NOTENUMBER can be between 0 and 127, or NULL
+# NAME supports all alphanumeric ASCII, and ' ', '_', '-', '+' - can also be NULL
+# Please note this section will be discarded for tracks which are not DRUM tracks
+[DRUMLANES]
+8:NULL:15:7 CYMBAL
+7:NULL:15:6 OPEN HAT
+6:NULL:15:5 CLOSED HAT
+5:NULL:15:4 COWBELL
+4:NULL:15:3 CLAP
+3:NULL:15:2 TOM
+2:NULL:15:1 SNARE
+1:NULL:15:0 KICK
+[/DRUMLANES]
+
+
+# PC
+# Syntax: NUMBER NAME
+# number must be either:
+#   - A number (for simple PC)
+#   - Three numbers, delimited by ':', which represent PC:MSB:LSB. You can put 'NULL' to not set the MSB/LSB.
+# PC must be between 1...128
+# MSB/LSB must be between 0...127
+[PC]
+1 INIT
+1:1:NULL B01
+[/PC]
+
+# CC
+# Syntax: CC_NUMBER NAME or CC_NUMBER:DEFAULT=xx NAME
+# DEFAULT_VALUE must be a valid number between 0 and 127
+[CC]
+3 TRG NOTE
+4 TRG VELO
+5 TRG LENG
+7 VOLUME
+10 PAN
+13 FLT TRG
+14 LFO TRG
+16 TUNE
+17 PLAY MOD
+18 BIT REDU
+19 SMP SLOT
+20 SMP STAR
+21 SMP LENG
+22 LOOP POS
+23 SMP LVL
+24 FXR PRED
+25 FXR TIME
+26 FXR SHFR
+27 FXR SHGA
+28 FXR HPF
+29 FXR LPF
+31 FXR MIX
+70 FLT ATTK
+71 FLT DCAY
+72 FLT SUST
+73 FLT REL
+74 FLT FREQ
+75 FLT RESO
+76 FLT TYPE
+77 ENV DEPT
+78 AMP ATTK
+79 AMP HOLD
+80 AMP DCAY
+81 OVERDRIV
+82 DLAY SEN
+83 REVB SEN
+85 FXD TIME
+86 FXD LR
+87 FXD WIDT
+88 FXD FDB
+89 FXD HPF
+90 FXD LPF
+91 FXD>REV
+92 FXD MIX
+94 MUTE
+95 TRK LVL
+102 LFO SPD
+103 LFO MULT
+104 LFO FADE
+105 LFO DEST
+106 LFO WAVE
+107 LFO SPH
+108 LFO TRGM
+109 LFO DP C
+110 LFO DEPTH
+118 LFO COMPMIX
+[/CC]
+
+
+# ASSIGN
+# Syntax: POT_NUMBER TYPE:VALUE or POT_NUMBER TYPE:VALUE DEFAULT=DEFAULT_VALUE
+# POT_NUMBER must be between 1 and 8
+# TYPE can be "CC", "PB" (pitchbend), "AT" (aftertouch), "CV", "NRPN", or "NULL" (this won't assign the pot).
+# Non explicitly-defined pots will be considered "NULL"
+# VALUE VALIDATION
+#### For CC: Value must be a valid number between 0 and 119
+#### For PB and AT, any text after the TYPE will be ignored
+#### For CV, value must be between 1 and 4
+#### For NRPN, value must be MSB:LSB:DEPTH, with both lsb & msb bebtween 0 and 127, and DEPTH being either 7 or 14
+# DEFAULT VALUE
+#### For CC: DEFAULT_VALUE must be a valid number between 0 and 127
+#### For PB: DEFAULT_VALUE must be a valid number between 0 and 16383
+#### For NRPN: DEFAULT_VALUE must be a valid number, either between 0 and 127 (for 7 bit NRPNs) or between 0 and 16383 (for 14bit NRPNs)
+#### For CV: DEFAULT_VALUE must be either a valid number between 0 and 65535, or a voltage between -5V and 5V, e.g. "-4.25V" or "1.7V"
+#### Please note default value will be ignored for PB and AT messages.
+[ASSIGN]
+
+[/ASSIGN]
+
+
+# AUTOMATION
+# Syntax: TYPE:VALUE
+# TYPE can be "CC", "PB" (pitchbend), "AT" (aftertouch), "CV", or "NRPN"
+# VALUE VALIDATION
+#### For CC: Value must be a valid number between 0 and 119
+#### For PB and AT, any text after the TYPE will be ignored
+#### For CV, value must be between 1 and 4
+#### For NRPN, value must be MSB:LSB:DEPTH, with both lsb & msb bebtween 0 and 127, and DEPTH being either 7 or 14
+[AUTOMATION]
+CC:23 DEFAULT=20  #Dist Amount
+[/AUTOMATION]
+
+
+# This section will be readable from Hapax.
+[COMMENT]
+Digitakt
+[/COMMENT]
