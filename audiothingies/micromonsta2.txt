@@ -1,0 +1,130 @@
+VERSION 1 # Currently, this should only be 1.
+
+# Supports all alphanumeric ASCII, and ' ', '_', '-', '+' - can also be NULL
+TRACKNAME MM2 
+
+# Can be POLY, DRUM, MPE, or NULL
+TYPE POLY
+
+# Can be A, B, C, D, USBD, USBH, CVGx (x between 1&4), CVx, Gx, or NULL
+OUTPORT NULL
+
+# Can be x (between 1-16), or NULL -- this is ignored if output port is not MIDI
+OUTCHAN NULL
+
+# Can be NONE, ALLACTIVE, A, B, USBH, USBD, CVG, or NULL
+INPORT NULL
+
+# Can be x (between 1-16), ALL, or NULL. This definition will be ignored if INPORT is NONE, ALLACTIVE or CVG
+INCHAN NULL
+
+# DRUMLANES
+# Syntax: ROW:TRIG:CHAN:NOTENUMBER NAME
+# ROW must be between 1 and 8
+# TRIG can be between 0 and 127, or NULL
+# CHAN can be a number between 1 and 16, Gx, CVx, CVGx (x between 1 and 4), or NULL
+# NOTENUMBER can be between 0 and 127, or NULL
+# NAME supports all alphanumeric ASCII, and ' ', '_', '-', '+' - can also be NULL
+# Please note this section will be discarded for tracks which are not DRUM tracks
+[DRUMLANES]
+[/DRUMLANES]
+
+# PC
+# Syntax: NUMBER NAME
+# number must be either:
+#   - A number (for simple PC)
+#   - Three numbers, delimited by ':', which represent PC:MSB:LSB. You can put 'NULL' to not set the MSB/LSB.
+# PC must be between 1...128
+# MSB/LSB must be between 0...127
+[PC]
+[/PC]
+
+# CC
+# Syntax: CC_NUMBER NAME or CC_NUMBER:DEFAULT=xx NAME
+# DEFAULT_VALUE must be a valid number between 0 and 127
+[CC]
+0 MSB BANK
+1 MW
+5 GLIDE
+7 VOLUME
+26 DELAY TIME
+27 DELAY FDB
+28 DELAY LEVEL
+29 REVERB DECAY
+30 REVERB MODULATION
+31 REVERB LEVEL
+32 LSB BANK
+33 VOICE DETUNE
+34 OSC DETUNE
+35 PAN SPREAD
+36 VCA ENV VEL
+37 VCF ENV VEL
+39 OSC1 SHAPE
+40 OSC1 TUNE
+41 OS1 FINE TUNE
+42 OSC2 SHAPE
+43 OSC2 TUNE
+44 OSC2 FINE TUNE
+45 OSC3 SHAPE
+46 OSC3 TUNE
+47 OSC3 FINE TUNE
+48 OSC1 MIX LEVEL
+49 OSC2 MIX LEVEL
+50 OSC3 MIX LEVEL
+51 NOISE MIX LEVEL
+52 MOD1 LEVEL
+53 MOD2 LEVEL
+54 MOD3 LEVEL
+55 MOD4 LEVEL
+56 MOD5 LEVEL
+57 MOD6 LEVEL
+58 MOD7 LEVEL
+59 MOD8 LEVEL
+60 MOD9 LEVEL
+61 MOD10 LEVEL
+62 LAG LEVEL
+64 SUSTAIN PEDAL
+70 MOD KNOB
+71 FILTER RESONANCE
+72 ENV1 RELEASE
+73 ENV1 ATTACK
+74 FILTER CUTOFF
+75 ENV1 DECAY
+76 LFO1 SPEED
+77 LFO2 SPEED
+78 LFO3 SPEED
+79 ENV1 SUSTAIN
+80 ENV2 ATTACK
+81 ENV2 DECAY
+82 ENV2 SUSTAIN
+83 ENV2 RELEASE
+84 ENV3 ATTACK
+85 ENV3 DECAY
+86 ENV3 SUSTAIN
+87 ENV3 RELEASE
+88 FILTER ENV
+89 FILTER TRACKING
+90 FILTER FM
+91 VOICE DRIVE
+120 ALL SOUND OFF
+123 ALL NOTES OFF
+[/CC]
+
+[ASSIGN]
+[/ASSIGN]
+
+# AUTOMATION
+# Syntax: TYPE:VALUE
+# TYPE can be "CC", "PB" (pitchbend), "AT" (aftertouch), "CV", or "NRPN"
+# VALUE VALIDATION
+#### For CC: Value must be a valid number between 0 and 119
+#### For PB and AT, any text after the TYPE will be ignored
+#### For CV, value must be between 1 and 4
+#### For NRPN, value must be MSB:LSB:DEPTH, with both lsb & msb bebtween 0 and 127, and DEPTH being either 7 or 14
+[AUTOMATION]
+[/AUTOMATION]
+
+# This section will be readable from Hapax.
+[COMMENT]
+[/COMMENT]
+
