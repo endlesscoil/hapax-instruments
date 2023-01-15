@@ -1,0 +1,77 @@
+VERSION 1 # Currently, this should only be 1.
+
+# Supports all alphanumeric ASCII, and ' ', '_', '-', '+' - can also be NULL
+TRACKNAME ATC-1
+
+# Can be POLY, DRUM, MPE, or NULL
+TYPE POLY
+
+# Can be A, B, C, D, USBD, USBH, CVGx (x between 1&4), CVx, Gx, or NULL
+OUTPORT NULL
+
+# Can be x (between 1-16), or NULL -- this is ignored if output port is not MIDI
+OUTCHAN NULL
+
+# Can be NONE, ALLACTIVE, A, B, USBH, USBD, CVG, or NULL
+INPORT NULL
+
+# Can be x (between 1-16), ALL, or NULL. This definition will be ignored if INPORT is NONE, ALLACTIVE or CVG
+INCHAN NULL
+ 
+
+# PC
+# Syntax: NUMBER NAME
+# number must be either:
+#   - A number (for simple PC)
+#   - Three numbers, delimited by ':', which represent PC:MSB:LSB. You can put 'NULL' to not set the MSB/LSB.
+# PC must be between 1...128
+# MSB/LSB must be between 0...127
+[PC]
+[/PC]
+
+
+# CC
+# Syntax: CC_NUMBER NAME or CC_NUMBER:DEFAULT=xx NAME
+# DEFAULT_VALUE must be a valid number between 0 and 127
+[CC]
+54 Osc1Freq
+55 Osc1TriOn
+56 Osc1SawOn
+57 Osc1PulOn
+58 Osc1PulWidth
+59 Osc2Freq
+60 Osc2TriOn
+61 Osc2SawOn
+62 Osc2PulOn
+63 Osc2PulWidth
+70 LFO1Rate
+71 LFO1Depth
+72 LFO2Rate 
+73 LFO2Depth
+84 Env3Amnt
+85 Env3Attack
+86 Env3Decay
+87 Env3Sustain
+88 Env3Release
+102 Mix1
+103 Mix2
+104 MixNoise
+105 VCFFreq
+106 VCFRes
+107 Env1Amnt
+108 Env1Attack
+109 Env1Decay
+110 Env1Sustain
+111 Env1Release
+114 Env2Attack
+115 Env2Decay
+116 Env2Sustain
+117 Env2Release
+119 303AccentMacro
+[/CC]
+
+
+# This section will be readable from Hapax.
+[COMMENT]
+Studio Electronics ATC-1
+[/COMMENT]
