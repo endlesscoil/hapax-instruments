@@ -1,0 +1,138 @@
+VERSION 1 # Currently, this should only be 1.
+
+###### DEFINITIONS
+
+# Supports all alphanumeric ASCII, and ' ', '_', '-', '+' - can also be NULL
+TRACKNAME BIM
+
+# Can be POLY, DRUM, MPE, or NULL
+TYPE POLY
+
+# Can be A, B, C, D, USBD, USBH, CVGx (x between 1&4), CVx, Gx, or NULL
+OUTPORT NULL
+
+# Can be x (between 1-16), or NULL -- this is ignored if output port is not MIDI
+OUTCHAN NULL
+
+# Can be NONE, ALLACTIVE, A, B, USBH, USBD, CVG, or NULL
+INPORT NULL
+
+# Can be x (between 1-16), ALL, or NULL. This definition will be ignored if INPORT is NONE, ALLACTIVE or CVG
+INCHAN NULL
+
+# DRUMLANES
+# Syntax: ROW:TRIG:CHAN:NOTENUMBER NAME
+# ROW must be between 1 and 8
+# TRIG can be between 0 and 127, or NULL
+# CHAN can be a number between 1 and 16, Gx, CVx, CVGx (x between 1 and 4), or NULL
+# NOTENUMBER can be between 0 and 127, or NULL
+# NAME supports all alphanumeric ASCII, and ' ', '_', '-', '+' - can also be NULL
+# Please note this section will be discarded for tracks which are not DRUM tracks
+[DRUMLANES]
+[/DRUMLANES]
+
+
+# PC
+# Syntax: NUMBER NAME
+# number must be either:
+#   - A number (for simple PC)
+#   - Three numbers, delimited by ':', which represent PC:MSB:LSB. You can put 'NULL' to not set the MSB/LSB.
+# PC must be between 1...128
+# MSB/LSB must be between 0...127
+[PC]
+1 INIT
+1:1:NULL The Nymph Echo
+2:1:NULL Dark Slap
+3:1:NULL Psycholotron
+4:1:NULL Faux Spring
+5:1:NULL Dust Memories
+6:1:NULL Vibroto
+7:1:NULL I See Icy
+8:1:NULL Moving Resonator
+9:1:NULL Tunneling
+10:1:NULL Short and Sweet
+11:1:NULL Dirty Repeats
+12:1:NULL Seasickness
+
+[/PC]
+
+# CC
+# Syntax: CC_NUMBER NAME or CC_NUMBER:DEFAULT=xx NAME
+# DEFAULT_VALUE must be a valid number between 0 and 127
+[CC]
+12 DELAY
+13 FEEDBACK
+14 MIX
+15 LFO RATE
+16 LFO DEPTH
+17 ACTIVE
+18 DIVISION
+19 RANGE
+20 FX TYPE
+21 IN GAIN
+22 HPF
+23 LPF
+24 FEEDBACK FILTERS
+25 OFFSET
+26 LFO WAVE
+27 LFO RANGE
+28 FREEZE
+29 FREEZE REVERSE
+30 LFO DIVISION
+31 LFO PHASE RESET
+[/CC]
+
+
+# ASSIGN
+# Syntax: POT_NUMBER TYPE:VALUE or POT_NUMBER TYPE:VALUE DEFAULT=DEFAULT_VALUE
+# POT_NUMBER must be between 1 and 8
+# TYPE can be "CC", "PB" (pitchbend), "AT" (aftertouch), "CV", "NRPN", or "NULL" (this won't assign the pot).
+# Non explicitly-defined pots will be considered "NULL"
+# VALUE VALIDATION
+#### For CC: Value must be a valid number between 0 and 119
+#### For PB and AT, any text after the TYPE will be ignored
+#### For CV, value must be between 1 and 4
+#### For NRPN, value must be MSB:LSB:DEPTH, with both lsb & msb bebtween 0 and 127, and DEPTH being either 7 or 14
+# DEFAULT VALUE
+#### For CC: DEFAULT_VALUE must be a valid number between 0 and 127
+#### For PB: DEFAULT_VALUE must be a valid number between 0 and 16383
+#### For NRPN: DEFAULT_VALUE must be a valid number, either between 0 and 127 (for 7 bit NRPNs) or between 0 and 16383 (for 14bit NRPNs)
+#### For CV: DEFAULT_VALUE must be either a valid number between 0 and 65535, or a voltage between -5V and 5V, e.g. "-4.25V" or "1.7V"
+#### Please note default value will be ignored for PB and AT messages.
+
+[ASSIGN]
+1 CC:14		#MIX
+2 CC:12 		#DELAY
+3 CC:13 		#FEEDBACK
+4 CC:15 		#LFO RATE
+5 CC:16 		#LFO DEPTH
+6 CC:17 		#ACTIVE
+7 CC:22 		#HPF
+8 CC:23 		#LPF
+[/ASSIGN]
+
+
+# AUTOMATION
+# Syntax: TYPE:VALUE
+# TYPE can be "CC", "PB" (pitchbend), "AT" (aftertouch), "CV", or "NRPN"
+# VALUE VALIDATION
+#### For CC: Value must be a valid number between 0 and 119
+#### For PB and AT, any text after the TYPE will be ignored
+#### For CV, value must be between 1 and 4
+#### For NRPN, value must be MSB:LSB:DEPTH, with both lsb & msb bebtween 0 and 127, and DEPTH being either 7 or 14
+[AUTOMATION]
+CC:14 DEFAULT=20  #MIX
+CC:12 DEFAULT=20  #DELAY
+CC:13 DEFAULT=20  #FEEDBACK
+CC:15 DEFAULT=20  #LFO RATE
+CC:16 DEFAULT=20  #LFO DEPTH
+CC:27 DEFAULT=20  #ACTIVE
+CC:28 DEFAULT=20  #FREEZE
+CC:23 DEFAULT=20  #LPF
+[/AUTOMATION]
+
+
+# This section will be readable from Hapax.
+[COMMENT]
+BAM!
+[/COMMENT]
