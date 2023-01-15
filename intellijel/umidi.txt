@@ -1,0 +1,62 @@
+VERSION 1 # Currently, this should only be 1.
+
+###### DEFINITIONS
+TRACKNAME uMidi Single Voice
+TYPE POLY
+OUTPORT NULL
+OUTCHAN NULL
+INPORT NULL
+INCHAN NULL
+
+
+# ASSIGN
+[ASSIGN]
+1 CC:21         # Expander 01
+2 CC:22         # Expander 02
+3 CC:23         # Expander 03
+4 CC:24         # Expander 04
+5 CC:25         # Expander 05
+6 CC:26         # Expander 06
+7 CC:27         # Expander 07
+8 CC:28         # Expander 08
+[/ASSIGN]
+
+[AUTOMATION]
+#uMidi
+CC:1            # Mod       
+CC:2            # CC
+#Expander
+CC:21           # Expander 01
+CC:22           # Expander 02
+CC:23           # Expander 03
+CC:24           # Expander 04
+CC:25           # Expander 05
+CC:26           # Expander 06
+CC:27           # Expander 07
+CC:28           # Expander 08
+
+[/AUTOMATION]
+
+# CC
+# Syntax: CC_NUMBER NAME or CC_NUMBER:DEFAULT=xx NAME
+# DEFAULT_VALUE must be a valid number between 0 and 127
+[CC]
+# Base
+1 Mod
+2 CC
+
+# Expander 
+21 Exp1   # Unipolar   
+22 Exp2   # Unipolar
+23 Exp3   # Unipolar
+24 Exp4   # Unipolar
+25 Exp5   # BiPolar
+26 Exp6   # BiPolar
+27 Exp7   # BiPolar
+28 Exp8   # BiPolar
+[/CC]
+
+# This section will be readable from Hapax.
+[COMMENT]
+Single Voice Intellijel uMidi config
+[/COMMENT]
