@@ -1,0 +1,319 @@
+############## Prophet X/L #############*
+
+VERSION 1 ## Currently, this should only be 1.*
+
+####### DEFINITIONS*
+
+## Supports all alphanumeric ASCII, and ' ', '_', '-', '+' - can also be NULL*
+
+TRACKNAME Prophet X/L
+
+## Can be POLY, DRUM, MPE, or NULL*
+
+**TYPE** POLY
+
+## Can be A, B, C, D, USBD, USBH, CVGx (x between 1&4), CVx, Gx, or NULL*
+
+OUTPORT NULL
+
+## Can be x (between 1-16), or NULL -- this is ignored if output port is not MIDI*
+
+OUTCHAN NULL
+
+## Can be NONE, ALLACTIVE, A, B, USBH, USBD, CVG, or NULL*
+
+INPORT NULL
+
+## Can be x (between 1-16), ALL, or NULL. This definition will be ignored if INPORT is NONE, ALLACTIVE or CVG*
+
+INCHAN ALL
+
+## DRUMLANES*
+
+## Syntax: ROW:TRIG:CHAN:NOTENUMBER NAME*
+
+## ROW must be between 1 and 8*
+
+## TRIG can be between 0 and 127, or NULL*
+
+## CHAN can be a number between 1 and 16, Gx, CVx, CVGx (x between 1 and 4), or NULL*
+
+## NOTENUMBER can be between 0 and 127, or NULL*
+
+## NAME supports all alphanumeric ASCII, and ' ', '_', '-', '+' - can also be NULL*
+
+## Please note this section will be discarded for tracks which are not DRUM tracks*
+
+[DRUMLANES]
+
+[/DRUMLANES]
+
+## PC*
+
+## Syntax: NUMBER NAME*
+
+## number must be either:*
+
+## - A number (for simple PC)*
+
+## - Three numbers, delimited by ':', which represent PC:MSB:LSB. You can put 'NULL' to not set the MSB/LSB.*
+
+## PC must be between 1...128*
+
+## MSB/LSB must be between 0...127*
+
+[PC]
+
+1 INIT
+
+1:1:NULL B01
+
+[/PC]
+
+## CC*
+
+## Syntax: CC_NUMBER NAME or CC_NUMBER:DEFAULT=xx NAME*
+
+## DEFAULT_VALUE must be a valid number between 0 and 127*
+
+[CC]
+
+01 Mod Wheel
+
+03 BPM
+
+05 Glide Mode
+
+07 Master Volume
+
+08 Sub Osc
+
+10 Pan Spread
+
+12 Voice Volume
+
+13 AB Mode
+
+14 Slider 1 Pos
+
+15 Slider 2 Pos
+
+16 FX1 on/off
+
+17 FX1 select
+
+18 FX1 Mix
+
+19 FX1 Param 1
+
+20 FX1 Param 2
+
+21 FX1 Param 3
+
+22 FX2 on/off
+
+23 FX2 select
+
+24 FX2 Mix
+
+25 FX2 Param 1
+
+26 FX2 Param 2
+
+27 FX2 Param 3
+
+28 16 Voice Mode
+
+29 Split Point
+
+32 Bank Select
+
+40 Amp Env Amount
+
+41 Velocity to Amp Env
+
+42 Amp Env Delay
+
+43 Amp Env Attack
+
+44 Amp Env Decay
+
+45 Amp Env Sustain
+
+46 Amp Env Release
+
+47 Filter Env Amount
+
+48 Velocity to Filter Env
+
+49 Filter Env Delay
+
+50 Filter Env Attack
+
+51 Filter Env Decay
+
+52 Filter Env Sustain
+
+53 Filter Env Release
+
+54 Inst. 1 Glide Amount
+
+55 Inst. 2 Glide Amount
+
+56 Osc 1 Glide Amount
+
+57 Osc 2 Glide Amount
+
+58 Arpeggiator on/off
+
+59 Arpeggiator Mode
+
+60 Arpeggiator Range
+
+61 Arpeggiator Relatch
+
+62 Clock Divide
+
+63 Arpeggiator Repeats
+
+64 Sustain Pedal
+
+65 Glide on/off
+
+66 Inst. 1 Freq
+
+67 Inst. 1 Fine Tune
+
+68 Inst. 1 Level
+
+69 Inst. 1 Pan
+
+70 Inst. 1 Loop on/off
+
+71 Inst. 1 Reverse
+
+72 Inst. 2 Freq
+
+73 Inst. 2 Fine Tun
+
+75 Inst. 2 Level
+
+76 Inst. 2 Pan
+
+77 Inst. 2 Loop on/
+
+78 Inst. 2 Reverse
+
+79 Osc 2->1 Sync
+
+80 Osc 1 Frq
+
+81 Osc 1 Fine Freq
+
+82 Osc 1 Level
+
+83 Osc 1 Shape
+
+84 Osc 1 Shape Mod
+
+85 Osc 1 Pan
+
+86 Osc 2 Frq
+
+87 Osc 2 Fine Freq
+
+88 Osc 2 Level
+
+89 Osc 2 Shape
+
+90 Osc 2 Shape Mod
+
+91 Osc 2 Pan
+
+92 Osc Slop
+
+93 Hack
+
+94 Decimate
+
+102 Cutoff
+
+103 Reso
+
+104 Filt Keyb Amount
+
+105 Drive
+
+106 LP Stereo Split
+
+116 Unison on/off
+
+117 Unison Detune
+
+118 Unison Mode
+
+[/CC]
+
+## ASSIGN*
+
+## Syntax: POT_NUMBER TYPE:VALUE or POT_NUMBER TYPE:VALUE DEFAULT=DEFAULT_VALUE*
+
+## POT_NUMBER must be between 1 and 8*
+
+## TYPE can be "CC", "PB" (pitchbend), "AT" (aftertouch), "CV", "NRPN", or "NULL" (this won't assign the pot).*
+
+## Non explicitly-defined pots will be considered "NULL"*
+
+## VALUE VALIDATION*
+
+##### For CC: Value must be a valid number between 0 and 119*
+
+##### For PB and AT, any text after the TYPE will be ignored*
+
+##### For CV, value must be between 1 and 4*
+
+##### For NRPN, value must be MSB:LSB:DEPTH, with both lsb & msb bebtween 0 and 127, and DEPTH being either 7 or 14*
+
+## DEFAULT VALUE*
+
+##### For CC: DEFAULT_VALUE must be a valid number between 0 and 127*
+
+##### For PB: DEFAULT_VALUE must be a valid number between 0 and 16383*
+
+##### For NRPN: DEFAULT_VALUE must be a valid number, either between 0 and 127 (for 7 bit NRPNs) or between 0 and 16383 (for 14bit NRPNs)*
+
+##### For CV: DEFAULT_VALUE must be either a valid number between 0 and 65535, or a voltage between -5V and 5V, e.g. "-4.25V" or "1.7V"*
+
+##### Please note default value will be ignored for PB and AT messages.*
+
+[ASSIGN]
+
+[/ASSIGN]
+
+## AUTOMATION*
+
+## Syntax: TYPE:VALUE*
+
+## TYPE can be "CC", "PB" (pitchbend), "AT" (aftertouch), "CV", or "NRPN"*
+
+## VALUE VALIDATION*
+
+##### For CC: Value must be a valid number between 0 and 119*
+
+##### For PB and AT, any text after the TYPE will be ignored*
+
+##### For CV, value must be between 1 and 4*
+
+##### For NRPN, value must be MSB:LSB:DEPTH, with both lsb & msb bebtween 0 and 127, and DEPTH being either 7 or 14*
+
+[AUTOMATION]
+
+[/AUTOMATION]
+
+# This section will be readable from Hapax.
+
+[COMMENT]
+
+This one’s for Dave
+
+[/COMMENT]

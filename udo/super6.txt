@@ -1,0 +1,277 @@
+VERSION 1 # Currently, this should only be 1.
+
+# Supports all alphanumeric ASCII, and ' ', '_', '-', '+' - can also be NULL
+TRACKNAME SUPER6
+
+# Can be POLY, DRUM, MPE, or NULL
+TYPE NULL
+
+# Can be A, B, C, D, USBD, USBH, CVGx (x between 1&4), CVx, Gx, or NULL
+OUTPORT NULL
+
+# Can be x (between 1-16), or NULL -- this is ignored if output port is not MIDI
+OUTCHAN NULL
+
+# Can be NONE, ALLACTIVE, A, B, USBH, USBD, CVG, or NULL
+INPORT NULL
+
+# Can be x (between 1-16), ALL, or NULL. This definition will be ignored if INPORT is NONE, ALLACTIVE or CVG
+INCHAN NULL
+
+# This defines the default 'MAX RATE' for automation lanes.
+# Can be NULL, 192, 96, 64, 48, 32, 24, 16, 12, 8, 6, 4, 3, 2, 1
+MAXRATE NULL
+
+# DRUMLANES
+# Syntax: ROW:TRIG:CHAN:NOTENUMBER NAME
+# ROW must be between 1 and 8
+# TRIG can be between 0 and 127, or NULL
+# CHAN can be a number between 1 and 16, Gx, CVx, CVGx (x between 1 and 4), or NULL
+# NOTENUMBER can be between 0 and 127, or NULL
+# NAME supports all alphanumeric ASCII, and ' ', '_', '-', '+' - can also be NULL
+# Please note this section will be discarded for tracks which are not DRUM tracks
+[DRUMLANES]
+[/DRUMLANES]
+
+
+# PC
+# Syntax: NUMBER NAME
+# number must be either:
+#   - A number (for simple PC)
+#   - Three numbers, delimited by ':', which represent PC:MSB:LSB. You can put 'NULL' to not set the MSB/LSB.
+# PC must be between 1...128
+# MSB/LSB must be between 0...127
+[PC]
+[/PC]
+
+
+# CC
+# Syntax: CC_NUMBER NAME or CC_NUMBER:DEFAULT=xx NAME
+# DEFAULT_VALUE must be a valid number between 0 and 127
+[CC]
+0 BANK SELECT
+1 MOD LEVER
+3 TEMPO
+4 FOOT CTRL
+5 PRTAMNTO TIME
+6 DATA ENTRY MSB
+7 VCA ENV LVL
+11 EXPRESSION
+12 DELAY TIME
+13 DELAY FBK
+14 SQNC LOAD
+
+16 LFO1 WVFM MODE
+# 0 = TRIANGLE 21 = SQUARE 43 = RANDOM 64 = SAW 85 = HF 107 = HF TRK
+
+17 LFO1 RATE
+18 LFO1 DELAY
+19 LFO1 LR PHASE
+
+20 LFO1 MODE
+# 0 = FREE/NORM 43 = ONCE/DDS1 85 = RESET/DDS2
+
+21 DDS LFO1 AMT
+22 DDS ENV1 AMT
+
+23 DDS MOD DEST
+# 0 = DDS1 43 = BOTH 85 = DDS2
+
+24 SUPER MODE
+# 0 = OFF 43 = 1/2 85 = ON
+
+25 PW/DETUNE
+26 PWM/SWM
+
+27 PWM/SWM SRC
+# 0 = LFO1 43 = BOTH 85 = ENV1
+
+28 CROSS MOD
+
+29 DDS1 WVFM
+# 0 = SINE 21 = SAW 43 = SQUARE 64 = TRIANGE 85 = NOISE 107 = ALTERNATE WAVEFORM
+
+30 DDS1 RANGE
+# 0 = 64' 21 = 32' 43 = 16' 64 = 8' 85 = 4' 107 = 2'
+
+31 DDS2 WVFM
+# 0 = SINE 21 = SAW 43 = SQUARE 64 = TRIANGE 85 = NOISE 107 = PULSE
+
+32 ENV1 DCY HLD
+33 ENV2 DCY HLD
+
+34 DDS2 RANGE
+# 0 = LFO 21 = 32' 43 = 16' 64 = 8' 85 = 4' 107 = 2'
+
+35 DDS2 TUNE
+
+36 DDS2 MODE
+# 0 = NORM 43 = X-FADE/SUB OSC 85 = SYNC/AUDIO IN
+
+37 OSCMIX SPLT PT
+38 CTRL6 LSB
+
+40 VCF HPF MODE
+# 0 = OFF 43 = FIX 85 = TRK
+
+41 VCF DRIVE
+# 0 = OFF 43 = 1 85 = 2
+
+43 VCF KEY TRK
+# 0 = OFF 43 = 1/2 85 = ON
+
+44 VCF ENV SOURCE
+# 0 = ENV1 43 = 1/2 85 = ENV2
+
+45 VCF ENV AMT
+46 VCF LFO1 AMT
+47 VCF DDS2 AMT
+
+48 VCA DYNAMICS
+# 0 = OFF 43 = 1/2 85 = ON
+
+49 VCA ENV MODE
+# 0 = ENV2 43 = FIXED ENV1 85 = FIXED ENV2
+
+50 ENV1 MODE
+# 0 = NORMAL 43 = INVERTED 85 = LOOP
+
+51 ENV1 KEY TRK
+# 0 = OFF 43 = 1/2 85 = ON
+
+52 ENV 1 ATK HOLD
+53 ENV1 ATK
+54 ENV1 DECAY
+55 ENV1 SUSTAIN
+56 ENV1 RELEASE
+57 ENV2 DECAY
+58 ENV2 SUSTAIN
+59 MANUAL MODE
+
+60 LFO2 TRIG SRC
+# 0 = TRIG 43 = AT + TRIG 85 = ON
+
+61 PERF CTRL DEST
+# 0 = DDS1 43 = 1+2 85 = DDS2
+
+62 LFO2 RATE
+63 LFO2 DELAY
+
+64 SUSTAIN PEDAL
+# 0 = OFF 64 = ON
+
+67 OCT SELECT
+70 DDS LFO2 AMT
+71 VCF RES
+72 ENV2 RELEASE
+73 ENV2 ATTACK
+74 VCF CTF FQ
+75 VCF LFO2 AMT
+76 DDS PB AMT
+77 VCF PB AMT
+
+78 VOICE ASG MODE
+# 0 = POLY 2 26 = POLY 1 51 = UNISON 77 = LEGATO 102 = SOLO
+
+79 UNISON SIZE
+# 0 = 3 VOICES 26 = 6 VOICES 51 = 6 VOICES, OCTAVE 77 = 6 VOICES, OCTAVE & FIFTH 102 = 6 VOICES, MAJOR CHORD
+
+80 BINAURAL MODE
+# 0 = OFF 64 = ON
+
+81 CLOCK SYNC
+# 0 = OFF 64 = ON
+
+82 ARP RANGE
+# 0 = 1 OCTAVE 32 = 2 OCTAVES 64 = 3 OCTAVES 96 = 4 OCTAVES
+
+83 ARP SWING
+# 0 = SWING 0 26 = SWING 1 51 = SWING 2 77 = SWING 3 102 = SWING 4
+
+84 ARP EXT CLOCK
+# 0 = OFF 64 = ON
+
+85 ARP MODE
+# 0 = UP 26 = DOWN 51 = UP & DOWN 77 = RANDOM 102 = SEQUENCER
+
+86 ARP ON/OFF
+# 0 = OFF 64 = ON
+
+87 ARP HOLD
+# 0 = OFF 64 = ON
+
+91 DELAY LVL
+92 VCA LFO1 AMT
+
+93 CHORUS
+# 0 = OFF 32 = CHORUS1 64 = CHORUS2 96 = CHORUS 1 & 2
+
+94 DRIFT
+95 HPF FIX CTF FRQ
+98 NRPN - LSB
+99 NRPN - MSB
+100 RPN - LSB
+101 RPN - MSB
+120 ALL SND OFF
+121 RST ALL CTRLS
+
+122 LOCAL CTRL
+# 0 = OFF 64 = ON
+
+123 ALL NOTES OFF
+124 OMNI OFF
+125 OMNI ON
+126 MONO ON
+127 POLY ON
+[/CC]
+
+
+# NRPN
+# Syntax: "MSB:LSB:DEPTH NAME" or "MSB:LSB:DEPTH:DEFAULT=xx NAME"
+# Lsb & msb should be between 0 and 127
+  # Note: LSB can be over 127 ONLY if MSB is 0 or omitted
+  # e.g. '0:1026:7 FOO', or ':2000:7 BAR' 
+  # the examples above would be equivalent to '8:2:7 FOO' and '15:80:7 BAR' respectively
+# DEPTH can be 7 or 14
+# For NRPN: DEFAULT_VALUE must be a valid number, either between 0 and 127 (for 7 bit NRPNs) or between 0 and 16383 (for 14bit NRPNs)
+[NRPN]
+[/NRPN]
+
+
+# ASSIGN
+# Syntax: POT_NUMBER TYPE:VALUE or POT_NUMBER TYPE:VALUE DEFAULT=DEFAULT_VALUE
+# POT_NUMBER must be between 1 and 8
+# TYPE can be "CC", "PB" (pitchbend), "AT" (aftertouch), "CV", "NRPN", or "NULL" (this won't assign the pot).
+# Non explicitly-defined pots will be considered "NULL"
+# VALUE VALIDATION
+#### For CC: Value must be a valid number between 0 and 119
+#### For PB and AT, any text after the TYPE will be ignored
+#### For CV, value must be between 1 and 4
+#### For NRPN, value must be MSB:LSB:DEPTH, with both lsb & msb bebtween 0 and 127, and DEPTH being either 7 or 14
+# DEFAULT VALUE
+#### For CC: DEFAULT_VALUE must be a valid number between 0 and 127
+#### For PB: DEFAULT_VALUE must be a valid number between 0 and 16383
+#### For NRPN: DEFAULT_VALUE must be a valid number, either between 0 and 127 (for 7 bit NRPNs) or between 0 and 16383 (for 14bit NRPNs)
+#### For CV: DEFAULT_VALUE must be either a valid number between 0 and 65535, or a voltage between -5V and 5V, e.g. "-4.25V" or "1.7V"
+#### Please note default value will be ignored for PB and AT messages.
+[ASSIGN]
+[/ASSIGN]
+
+
+# AUTOMATION
+# Syntax: TYPE:VALUE
+# TYPE can be "CC", "PB" (pitchbend), "AT" (aftertouch), "CV", or "NRPN"
+# VALUE VALIDATION
+#### For CC: Value must be a valid number between 0 and 119
+#### For PB and AT, any text after the TYPE will be ignored
+#### For CV, value must be between 1 and 4
+#### For NRPN, value must be MSB:LSB:DEPTH, with both lsb & msb bebtween 0 and 127, and DEPTH being either 7 or 14
+# NOTE: You are limited to 64 automation lanes
+[AUTOMATION]
+[/AUTOMATION]
+
+
+# This section will be readable from Hapax.
+[COMMENT]
+Perkons
+[/COMMENT]

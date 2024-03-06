@@ -1,0 +1,166 @@
+VERSION 1 # Currently, this should only be 1.
+
+# Supports all alphanumeric ASCII, and ' ', '_', '-', '+' - can also be NULL
+TRACKNAME SmplTrek
+
+# Can be POLY, DRUM, MPE, or NULL
+TYPE POLY
+
+# Can be A, B, C, D, USBD, USBH, CVGx (x between 1&4), CVx, Gx, or NULL
+OUTPORT NULL
+
+# Can be x (between 1-16), or NULL -- this is ignored if output port is not MIDI
+OUTCHAN NULL
+
+# Can be NONE, ALLACTIVE, A, B, USBH, USBD, CVG, or NULL
+INPORT NULL
+
+# Can be x (between 1-16), ALL, or NULL. This definition will be ignored if INPORT is NONE, ALLACTIVE or CVG
+INCHAN NULL
+
+# This defines the default 'MAX RATE' for automation lanes.
+# Can be NULL, 192, 96, 64, 48, 32, 24, 16, 12, 8, 6, 4, 3, 2, 1
+MAXRATE NULL
+
+# DRUMLANES
+# Syntax: ROW:TRIG:CHAN:NOTENUMBER NAME
+# ROW must be between 1 and 8
+# TRIG can be between 0 and 127, or NULL
+# CHAN can be a number between 1 and 16, Gx, CVx, CVGx (x between 1 and 4), or NULL
+# NOTENUMBER can be between 0 and 127, or NULL
+# NAME supports all alphanumeric ASCII, and ' ', '_', '-', '+' - can also be NULL
+# Please note this section will be discarded for tracks which are not DRUM tracks
+[DRUMLANES]
+[/DRUMLANES]
+
+
+# PC
+# Syntax: NUMBER NAME
+# number must be either:
+#   - A number (for simple PC)
+#   - Three numbers, delimited by ':', which represent PC:MSB:LSB. You can put 'NULL' to not set the MSB/LSB.
+# PC must be between 1...128
+# MSB/LSB must be between 0...127
+[PC]
+1 scene1
+2 scene2
+3 scene3
+4 scene4
+5 scene5
+6 scene6
+7 scene7
+8 scene8
+9 scene9
+10 scene10
+11 scene11
+12 scene12
+13 scene13
+14 scene14
+15 scene15
+16 scene16
+[/PC]
+
+
+# CC
+# Syntax: CC_NUMBER NAME or CC_NUMBER:DEFAULT=xx NAME
+# DEFAULT_VALUE must be a valid number between 0 and 127
+[CC]
+## These CCs work on project channel
+30 project play
+31 scene play
+32 track shift
+33 master level
+34 project level
+35 prj-ext bal
+36 FX insert onoff
+37 FX insert type
+38 FX insert p1
+39 FX insert p2
+40 FX insert p3
+41 FX insert p4
+42 FX send onoff
+43 FX send type
+44 FX send p1
+45 FX send p2
+46 FX send p3
+47 FX send p4
+48 FX master onoff
+49 FX master type
+50 FX master p1
+51 FX master p2
+52 FX master p3
+53 FX master p4
+# These CCs work on each track channel
+60 track play
+61 track level
+62 track pan
+63 track send fx
+64 track mute
+65 track eq type
+66 track eq freq
+67 track eq res
+68 pitch (loop-shots)
+[/CC]
+
+
+# NRPN
+# Syntax: "MSB:LSB:DEPTH NAME" or "MSB:LSB:DEPTH:DEFAULT=xx NAME"
+# Lsb & msb should be between 0 and 127
+  # Note: LSB can be over 127 ONLY if MSB is 0 or omitted
+  # e.g. '0:1026:7 FOO', or ':2000:7 BAR' 
+  # the examples above would be equivalent to '8:2:7 FOO' and '15:80:7 BAR' respectively
+# DEPTH can be 7 or 14
+# For NRPN: DEFAULT_VALUE must be a valid number, either between 0 and 127 (for 7 bit NRPNs) or between 0 and 16383 (for 14bit NRPNs)
+[NRPN]
+[/NRPN]
+
+
+# ASSIGN
+# Syntax: POT_NUMBER TYPE:VALUE or POT_NUMBER TYPE:VALUE DEFAULT=DEFAULT_VALUE
+# POT_NUMBER must be between 1 and 8
+# TYPE can be "CC", "PB" (pitchbend), "AT" (aftertouch), "CV", "NRPN", or "NULL" (this won't assign the pot).
+# Non explicitly-defined pots will be considered "NULL"
+# VALUE VALIDATION
+#### For CC: Value must be a valid number between 0 and 119
+#### For PB and AT, any text after the TYPE will be ignored
+#### For CV, value must be between 1 and 4
+#### For NRPN, value must be MSB:LSB:DEPTH, with both lsb & msb bebtween 0 and 127, and DEPTH being either 7 or 14
+# DEFAULT VALUE
+#### For CC: DEFAULT_VALUE must be a valid number between 0 and 127
+#### For PB: DEFAULT_VALUE must be a valid number between 0 and 16383
+#### For NRPN: DEFAULT_VALUE must be a valid number, either between 0 and 127 (for 7 bit NRPNs) or between 0 and 16383 (for 14bit NRPNs)
+#### For CV: DEFAULT_VALUE must be either a valid number between 0 and 65535, or a voltage between -5V and 5V, e.g. "-4.25V" or "1.7V"
+#### Please note default value will be ignored for PB and AT messages.
+[ASSIGN]
+1 CC:66 #filter freqeuncy
+2 CC:67 #filter resonance
+3 CC:63 #send amount
+4 CC:68 DEFAULT=63 #pitch
+5 CC:61 DEFAULT=100 #track volume
+6 CC:62 DEFAULT=63 #pan
+[/ASSIGN]
+
+
+# AUTOMATION
+# Syntax: TYPE:VALUE
+# TYPE can be "CC", "PB" (pitchbend), "AT" (aftertouch), "CV", or "NRPN"
+# VALUE VALIDATION
+#### For CC: Value must be a valid number between 0 and 119
+#### For PB and AT, any text after the TYPE will be ignored
+#### For CV, value must be between 1 and 4
+#### For NRPN, value must be MSB:LSB:DEPTH, with both lsb & msb bebtween 0 and 127, and DEPTH being either 7 or 14
+# NOTE: You are limited to 64 automation lanes
+[AUTOMATION]
+CC:63 #track send fx
+CC:66 #track eq freq
+CC:67 #track eq res
+CC:61 #track level
+[/AUTOMATION]
+
+
+# This section will be readable from Hapax.
+[COMMENT]
+Sonicware SmplTrek
+CC30 to 53 work on project's midi channel
+CC60 to 68 work on each track's midi channel
+[/COMMENT]

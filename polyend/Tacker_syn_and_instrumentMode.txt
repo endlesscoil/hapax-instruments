@@ -1,0 +1,69 @@
+VERSION 1 # Currently, this should only be 1.
+
+# Supports all alphanumeric ASCII, and ' ', '_', '-', '+' - can also be NULL
+TRACKNAME POLYEND TRACKER OG
+
+# Can be POLY, DRUM, MPE, or NULL
+TYPE NULL
+
+# Can be A, B, C, D, USBD, USBH, CVGx (x between 1&4), CVx, Gx, or NULL
+OUTPORT NULL
+
+# Can be x (between 1-16), or NULL -- this is ignored if output port is not MIDI
+OUTCHAN NULL
+
+# Can be NONE, ALLACTIVE, A, B, USBH, USBD, CVG, or NULL
+INPORT NULL
+
+# Can be x (between 1-16), ALL, or NULL. This definition will be ignored if INPORT is NONE, ALLACTIVE or CVG
+INCHAN NULL
+
+# This defines the default 'MAX RATE' for automation lanes.
+# Can be NULL, 192, 96, 64, 48, 32, 24, 16, 12, 8, 6, 4, 3, 2, 1
+MAXRATE NULL
+
+# CC
+# Syntax: CC_NUMBER NAME or CC_NUMBER:DEFAULT=xx NAME
+# DEFAULT_VALUE must be a valid number between 0 and 127
+[CC]
+41 Track1 Pattern
+42 Track2 Pattern
+43 Track3 Pattern
+44 Track4 Pattern
+45 Track5 Pattern
+46 Track6 Pattern
+47 Track7 Pattern
+48 Track8 Pattern
+
+51 Perf FX1 value
+52 Perf FX2 value
+53 Perf FX3 value
+54 Perf FX4 value
+55 Perf FX5 value
+56 Perf FX6 value
+57 Perf FX7 value
+58 Perf FX8 value
+59 Perf FX9 value
+60 Perf FX10 value
+61 Perf FX11 value
+62 Perf FX12 value
+
+71 Track1 Volume
+72 Track2 Volume
+73 Track3 Volume
+74 Track4 Volume
+75 Track5 Volume
+76 Track6 Volume
+77 Track7 Volume
+78 Track8 Volume
+
+79 Mstr Delay Mix
+80 Mstr Verb Mix
+81 Mstr Dry Mix
+82 Line Input Mix
+[/CC]
+
+# This section will be readable from Hapax.
+[COMMENT]
+Polyend Tracker original version Sequencer mode only
+[/COMMENT]
