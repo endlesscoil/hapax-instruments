@@ -1,0 +1,125 @@
+VERSION 1
+
+TRACKNAME Take 5
+
+TYPE POLY
+
+OUTPORT NULL
+
+OUTCHAN NULL
+
+INPORT NULL
+
+INCHAN NULL
+
+[PC]
+[/PC]
+
+[CC]
+1 Mod Wheel
+2 Breath
+3 BPM
+4 Foot Controller
+5 Glide Mode
+6 Data Entry MSB
+7 Master Volume
+8 Osc1 Octave 0-4
+9 Osc1 Fine Freq
+10 Osc1 Shape
+11 Expression Pedal
+12 Voice Volume
+13 Osc2 Octave 0-4
+14 Osc2 Fine Freq
+15 Osc2 Shape
+16 FX On/Off 0-1
+17 FX Type 0-8
+18 FX Depth/Mix
+19 FX Time
+20 FX Feedback/Misc
+21 FX Clock Sync On/Off 0-1
+22 FX Clock Sync Rate 0-10
+23 Reverb On/Off 0-1
+24 Reverb Wet/Dry Mix
+25 Reverb Size
+26 Reverb Predelay
+27 Reverb Decay
+28 Reverb Tone
+29 -1 Oct 0-1
+30 -2 Oct 0-1
+31 Unison On/Off 0-1
+32 Bank Select LSB
+33 Filter Cutoff
+34 Filter Resonance
+35 Filter Drive
+36 Filter Key Tracking
+37 Vintage
+38 Data Entry LSB
+39 Osc Sync 0-1
+40 Osc1 Level
+41 Osc2 Level
+42 Sub Osc Level
+43 Noise Level
+44 FM On/Of 0-1
+45 Env1 Delay
+46 Env1 Attack
+47 Env1 Decay
+48 Env1 Sustain
+49 Env1 Release
+50 Env1 Amount
+51 Env1 Vel. On/Off 0-1
+52 Env2 Del
+53 Env2 Attack
+54 Env2 Decay
+55 Env2 Sustain
+56 Env2 Release
+57 Env2 Amount
+58 Env2 Vel. On/Off 0-1
+59 Arp On/Off 0-1
+60 Arp Mode 0-2
+61 Arp Octave 0-2
+62 Arp Repeats 0-3
+63 Clock Divide 0-7
+64 Sustain Pedal
+65 Osc1 Glide Rate
+66 Osc2 Glide Rate
+67 Distortion
+68 Glide On/Off 0-1
+69 Env Routing 0-2
+70 Unison Voice Count 0-5
+71 Unison Detune 0-7
+72 Unison Key Mode 0-2
+73 Unison Retrigger 0-1
+74 Brightness
+75 LFO1 Freq
+76 LFO1 Amount
+77 LFO1 Shape 0-4
+78 LFO1 Sync On/Off 0-1
+79 LFO1 Note Reset 0-1
+80 LFO2 Freq
+81 LFO2 Amount
+82 LFO2 Shape 0-4
+83 LFO2 Sync On/Off 0-1
+84 LFO2 Note Reset 0-1
+85 Pitch Bend Range Up 0-12
+86 Pitch Bend Range Down 0-24
+87 Osc1 Key Tracking On/Off 0-1
+88 Osc2 Key Tracking On/Off 0-1
+89 Key Split Note 0-44
+[/CC]
+
+[ASSIGN]
+1 CC:33
+2 CC:34
+3 CC:46
+4 CC:49
+5 CC:53
+6 CC:56
+7 CC:75
+8 CC:81
+[/ASSIGN]
+
+[AUTOMATION]
+[/AUTOMATION]
+
+[COMMENT]
+[/COMMENT]

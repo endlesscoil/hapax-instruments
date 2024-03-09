@@ -1,0 +1,54 @@
+VERSION 1
+
+TRACKNAME Reverb
+TYPE POLY
+
+# Can be A, B, C, D, USBD, USBH, CVGx (x between 1&4), CVx, Gx, or NULL
+OUTPORT A
+
+# Can be x (between 1-16), or NULL -- this is ignored if output port is not MIDI
+OUTCHAN 1
+
+# Can be NONE, ALLACTIVE, A, B, USBH, USBD, CVG, or NULL
+INPORT NONE
+
+# Can be x (between 1-16), ALL, or NULL. This definition will be ignored if INPORT is NONE, ALLACTIVE or CVG
+INCHAN NULL
+
+[PC]
+[/PC]
+
+[CC]
+10 SIMULATE EXP
+11 LOAD PRESET
+20 MODE
+21 DECAY TIME
+22 MIX
+23 VOLUME
+24 LOW
+25 HI
+26 THING 1
+27 THING 2
+35 SELECT BTN
+36 SCROLL BTN
+37 BYPASS BTN
+38 SAVE BTN
+39 SAVE PRESET
+51 MIDI CLOCK
+60 ENGAGE/BYPASS
+[/CC]
+
+# Syntax: POT_NUMBER TYPE:VALUE or POT_NUMBER TYPE:VALUE DEFAULT=DEFAULT_VALUE
+[ASSIGN]
+[/ASSIGN]
+
+# Syntax: TYPE:VALUE
+[AUTOMATION]
+[/AUTOMATION]
+
+[COMMENT]
+MIDI CLOCK 0 = OFF, 127 = ON
+[/COMMENT]```
+
+
+*Comments about your instrument definition goes here*

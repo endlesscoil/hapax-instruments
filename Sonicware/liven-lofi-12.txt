@@ -1,0 +1,100 @@
+############# POLY Example 1 #############
+VERSION 1 # Currently, this should only be 1.
+
+###### DEFINITIONS
+
+# Supports all alphanumeric ASCII, and ' ', '_', '-', '+'
+# Can also be omitted or NULL to not override the current track name, e.g. "TRACKNAME NULL"
+TRACKNAME Liven LoFi Twelve
+
+# Can be POLY, DRUM, MPE, or NULL
+TYPE POLY
+
+# Can be A, B, C, D, USBD, USBH, CVGx (x between 1&4), CVx, Gx, or NULL
+OUTPORT USBD
+
+# Can be x (between 1-16), or NULL -- this is ignored if output port is not MIDI
+OUTCHAN NULL
+
+# Can be NONE, ALLACTIVE, A, B, USBH, USBD, CVG, or NULL
+INPORT USBD
+
+# Can be x (between 1-16), ALL, or NULL -- ignored if INPORT is NONE, ALLACTIVE or CVG
+INCHAN ALL
+
+# PC
+# Syntax: NUMBER NAME
+# number must be either:
+#   - A number (for simple PC)
+#   - Three numbers, delimited by ':', which represent PC:MSB:LSB. You can put 'NULL' to not set the MSB/LSB.
+# PC must be between 1...128
+# MSB/LSB must be between 0...127
+[PC]
+18:NULL:NULL 17-Kaddish 
+[/PC]
+
+# CC
+# Syntax: CC_NUMBER NAME or CC_NUMBER:DEFAULT=xx NAME
+# DEFAULT_VALUE must be a valid number between 0 and 127
+[CC]
+5 velocity
+20 fx type
+21 fx speed
+22 fx amount
+23 ptn level
+24 seq mode
+25 bank
+27 smpl select
+28 octave
+29 twelve bit
+30 start index
+31 laid-back
+32 pitch
+33 reverb
+34 verb type
+35 verb mix
+36 line in-verb
+37 fltr type
+38 fltr cutoff
+39 fltr resonance
+40 fltr eg depth
+41 fltr eg time
+42 lfo shape
+43 lfo delay
+44 lfo rate
+45 lfo pitch
+46 lfo fltr depth
+47 rel & gate
+48 dice
+49 swing
+50 attack
+51 sweep
+52 sweep speed
+53 sweep range
+54 sweep curve
+55 voice mode
+56 voice adj
+57 transpose
+58 rand step
+59 param lock
+60 track level
+61 track pan
+62 track mute 
+[/CC]
+
+# AUTOMATION
+# Syntax: TYPE:VALUE
+# TYPE can be "CC", "PB" (pitchbend), "AT" (aftertouch), "CV", or "NRPN"
+# VALUE VALIDATION
+#### For CC: Value must be a valid number between 0 and 119
+#### For PB and AT, any text after the TYPE will be ignored
+#### For CV, value must be between 1 and 4
+#### For NRPN, value must be MSB:LSB:DEPTH, with both lsb & msb bebtween 0 and 127, and DEPTH being either 7 or 14
+[AUTOMATION]
+CC:64
+[/AUTOMATION]
+
+
+# This section will be readable from Hapax.
+[COMMENT]
+[/COMMENT]

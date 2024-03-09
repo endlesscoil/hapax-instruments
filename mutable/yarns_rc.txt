@@ -1,0 +1,216 @@
+VERSION 1 # Currently, this should only be 1.
+
+# Supports all alphanumeric ASCII, and ' ', '_', '-', '+' - can also be NULL
+TRACKNAME Yarns - Remote Control
+
+# Can be POLY, DRUM, MPE, or NULL
+TYPE POLY
+
+# Can be A, B, C, D, USBD, USBH, CVGx (x between 1&4), CVx, Gx, or NULL
+OUTPORT NULL
+
+# Can be x (between 1-16), or NULL -- this is ignored if output port is not MIDI
+OUTCHAN NULL
+
+# Can be NONE, ALLACTIVE, A, B, USBH, USBD, CVG, or NULL
+INPORT NULL
+
+# Can be x (between 1-16), ALL, or NULL. This definition will be ignored if INPORT is NONE, ALLACTIVE or CVG
+INCHAN NULL
+
+# DRUMLANES
+# Syntax: ROW:TRIG:CHAN:NOTENUMBER NAME
+# ROW must be between 1 and 8
+# TRIG can be between 0 and 127, or NULL
+# CHAN can be a number between 1 and 16, Gx, CVx, CVGx (x between 1 and 4), or NULL
+# NOTENUMBER can be between 0 and 127, or NULL
+# NAME supports all alphanumeric ASCII, and ' ', '_', '-', '+' - can also be NULL
+# Please note this section will be discarded for tracks which are not DRUM tracks
+[DRUMLANES]
+[/DRUMLANES]
+
+
+# PC
+# Syntax: NUMBER NAME
+# number must be either:
+#   - A number (for simple PC)
+#   - Three numbers, delimited by ':', which represent PC:MSB:LSB. You can put 'NULL' to not set the MSB/LSB.
+# PC must be between 1...128
+# MSB/LSB must be between 0...127
+[PC]
+[/PC]
+
+
+# CC
+# Syntax: CC_NUMBER NAME or CC_NUMBER:DEFAULT=xx NAME
+# DEFAULT_VALUE must be a valid number between 0 and 127
+[CC]
+1 Global - Layout
+2 Global - Tempo
+3 Global - Swing
+4 Part 1 MIDI Channel
+5 Part 1 Lower Note
+6 Part 1 Upper Note
+7 Part 1 MIDI Out Mode
+8 Part 1 Voicing
+9 Part 1 Note Priority
+10 Part 1 Portamento
+11 Part 1 Legato mode
+12 Part 1 Pitch Bend Range
+13 Part 1 Vibrato Range
+14 Part 1 Vibrato Speed
+15 Part 1 Transpose
+16 Part 1 Fine Tuning
+17 Part 1 Tuning Root
+18 Part 1 Tuning System
+19 Part 1 Trigger Duration
+20 Part 1 Velocity Scale
+21 Part 1 Trigger Shape
+22 Part 1 AUX CV Out
+23 Part 1 Oscillator Shape
+24 Part 1 ARPSEQ Clock Div
+25 Part 1 ARPSEQ Gate Length
+26 Part 1 ARP Range
+27 Part 1 ARP Direction
+28 Part 1 ARP Pattern
+29 Part 1 Euclidean Length
+30 Part 1 Euclidean Fill
+31 Part 1 Euclidean Rotate
+33 Global - Input Clock Div
+34 Global - Output Clock Div
+35 Global - Bar Duration
+36 Part 2 MIDI Channel
+37 Part 2 Lower Note
+38 Part 2 Upper Note
+39 Part 2 MIDI Out Mode
+40 Part 2 Voicing
+41 Part 2 Note Priority
+42 Part 2 Portamento
+43 Part 2 Legato mode
+44 Part 2 Pitch Bend Range
+45 Part 2 Vibrato Range
+46 Part 2 Vibrato Speed
+47 Part 2 Transpose
+48 Part 2 Fine Tuning
+49 Part 2 Tuning Root
+50 Part 2 Tuning System
+51 Part 2 Trigger Duration
+52 Part 2 Velocity Scale
+53 Part 2 Trigger Shape
+54 Part 2 AUX CV Out
+55 Part 2 Oscillator Shape
+56 Part 2 ARPSEQ Clock Div
+57 Part 2 ARPSEQ Gate Length
+58 Part 2 ARP Range
+59 Part 2 ARP Direction
+60 Part 2 ARP Pattern
+61 Part 2 Euclidean Length
+62 Part 2 Euclidean Fill
+63 Part 2 Euclidean Rotate
+65 Global - Nudge First Tick
+66 Global - Clock Manual Start
+67 Global - Clock Output
+68 Part 3 MIDI Channel
+69 Part 3 Lower Note
+70 Part 3 Upper Note
+71 Part 3 MIDI Out Mode
+72 Part 3 Voicing
+73 Part 3 Note Priority
+74 Part 3 Portamento
+75 Part 3 Legato mode
+76 Part 3 Pitch Bend Range
+77 Part 3 Vibrato Range
+78 Part 3 Vibrato Speed
+79 Part 3 Transpose
+80 Part 3 Fine Tuning
+81 Part 3 Tuning Root
+82 Part 3 Tuning System
+83 Part 3 Trigger Duration
+84 Part 3 Velocity Scale
+85 Part 3 Trigger Shape
+86 Part 3 AUX CV Out
+87 Part 3 Oscillator Shape
+88 Part 3 ARPSEQ Clock Div
+89 Part 3 ARPSEQ Gate Length
+90 Part 3 ARP Range
+91 Part 3 ARP Direction
+92 Part 3 ARP Pattern
+93 Part 3 Euclidean Length
+94 Part 3 Euclidean Fill
+95 Part 3 Euclidean Rotate
+100 Part 4 MIDI Channel
+101 Part 4 Lower Note
+102 Part 4 Upper Note
+103 Part 4 MIDI Out Mode
+104 Part 4 Voicing
+105 Part 4 Note Priority
+106 Part 4 Portamento
+107 Part 4 Legato mode
+108 Part 4 Pitch Bend Range
+109 Part 4 Vibrato Range
+110 Part 4 Vibrato Speed
+111 Part 4 Transpose
+112 Part 4 Fine Tuning
+113 Part 4 Tuning Root
+114 Part 4 Tuning System
+115 Part 4 Trigger Duration
+116 Part 4 Velocity Scale
+117 Part 4 Trigger Shape
+118 Part 4 AUX CV Out
+119 Part 4 Oscillator Shape
+120 Part 4 ARPSEQ Clock Div
+121 Part 4 ARPSEQ Gate Length
+122 Part 4 ARP Range
+123 Part 4 ARP Direction
+124 Part 4 ARP Pattern
+125 Part 4 Euclidean Length
+126 Part 4 Euclidean Fill
+127 Part 4 Euclidean Rotate
+[/CC]
+
+
+# NRPN
+# Syntax: "MSB:LSB:DEPTH NAME" or "MSB:LSB:DEPTH:DEFAULT=xx NAME"
+# Lsb & msb should be between 0 and 127
+# DEPTH can be 7 or 14
+# For NRPN: DEFAULT_VALUE must be a valid number, either between 0 and 127 (for 7 bit NRPNs) or between 0 and 16383 (for 14bit NRPNs)
+[NRPN]
+[/NRPN]
+
+
+# ASSIGN
+# Syntax: POT_NUMBER TYPE:VALUE or POT_NUMBER TYPE:VALUE DEFAULT=DEFAULT_VALUE
+# POT_NUMBER must be between 1 and 8
+# TYPE can be "CC", "PB" (pitchbend), "AT" (aftertouch), "CV", "NRPN", or "NULL" (this won't assign the pot).
+# Non explicitly-defined pots will be considered "NULL"
+# VALUE VALIDATION
+#### For CC: Value must be a valid number between 0 and 119
+#### For PB and AT, any text after the TYPE will be ignored
+#### For CV, value must be between 1 and 4
+#### For NRPN, value must be MSB:LSB:DEPTH, with both lsb & msb bebtween 0 and 127, and DEPTH being either 7 or 14
+# DEFAULT VALUE
+#### For CC: DEFAULT_VALUE must be a valid number between 0 and 127
+#### For PB: DEFAULT_VALUE must be a valid number between 0 and 16383
+#### For NRPN: DEFAULT_VALUE must be a valid number, either between 0 and 127 (for 7 bit NRPNs) or between 0 and 16383 (for 14bit NRPNs)
+#### For CV: DEFAULT_VALUE must be either a valid number between 0 and 65535, or a voltage between -5V and 5V, e.g. "-4.25V" or "1.7V"
+#### Please note default value will be ignored for PB and AT messages.
+[ASSIGN]
+[/ASSIGN]
+
+
+# AUTOMATION
+# Syntax: TYPE:VALUE
+# TYPE can be "CC", "PB" (pitchbend), "AT" (aftertouch), "CV", or "NRPN"
+# VALUE VALIDATION
+#### For CC: Value must be a valid number between 0 and 119
+#### For PB and AT, any text after the TYPE will be ignored
+#### For CV, value must be between 1 and 4
+#### For NRPN, value must be MSB:LSB:DEPTH, with both lsb & msb bebtween 0 and 127, and DEPTH being either 7 or 14
+[AUTOMATION]
+[/AUTOMATION]
+
+
+# This section will be readable from Hapax.
+[COMMENT]
+Mutable Instruments Yarns - Remote Control channel configuration
+[/COMMENT]
